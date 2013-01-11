@@ -1,0 +1,31 @@
+{# src/CarnetVoyage/MapBundle/Resources/views/Map/see_country.html.twig #}
+
+{% extends "CarnetVoyageMapBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - {{ valeur }}{% endblock %}
+       
+{% block body %}       
+    {% block javascripts %}{{ parent() }}{% endblock %}  
+        <h1>Souvenir de voyage : {{ valeur }}</h1>
+        <div id='worldmap' style='width: 1250px; height: 800px;'></div>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+		$('#worldmap').vectorMap({
+		    map: '{{ valeur }}',
+			hoverOpacity: 0.5,
+			hoverColor: false,
+                        colors: {{ region_visite|raw }}, 
+			backgroundColor: "#ffffff",
+			borderColor: "#000000",
+			selectedColor: "#EC0000",
+			//enableZoom: true,
+			//showTooltip: true,
+		    onRegionClick: function(element, pays)
+		    {
+		        
+		    }
+		});
+            });
+       </script>
+{% endblock %}

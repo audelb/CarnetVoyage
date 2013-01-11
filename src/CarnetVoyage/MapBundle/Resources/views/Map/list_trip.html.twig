@@ -1,0 +1,9 @@
+{# src/CarnetVoyage/MapBundle/Resources/views/Map/list_trip.html.twig #}
+
+{% for voyage in voyages %}
+    <li>
+        <a href="{{ path('CarnetVoyageMapModifierVoyage', {'id': voyage.id}) }}">
+            {{ voyage.nom }}
+        </a>
+    </li>
+{% endfor %}

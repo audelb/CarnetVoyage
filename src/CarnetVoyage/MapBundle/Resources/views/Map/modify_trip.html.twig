@@ -1,0 +1,11 @@
+{# src/CarnetVoyage/MapBundle/Resources/views/Map/modify_trip.html.twig #}
+
+{% extends "CarnetVoyageMapBundle::layout.html.twig" %}
+
+{% block body %}
+    {% block javascripts %}{{ parent() }}{% endblock %}
+  <h2>Modifier le voyage {{ id }}</h2>
+
+  {% include "CarnetVoyageMapBundle:Map:formulaire_trip.html.twig" %}
+
+{% endblock %}

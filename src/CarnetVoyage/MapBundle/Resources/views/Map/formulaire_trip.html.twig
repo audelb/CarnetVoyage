@@ -1,0 +1,177 @@
+{# src/CarnetVoyage/MapBundle/Resources/views/Map/formulaire_trip.html.twig #}
+
+<div class="well">
+  <form method="post" {{ form_enctype(form) }}>
+    
+        <table>
+              <tr>
+                  <th>Votre voyage</th>
+              </tr>
+              <tr>
+                  <td>
+                    {{ form_label(form.nom) }}
+                  </td>
+                  <td>
+                    {{ form_widget(form.nom) }}
+                    {{ form_errors(form.nom) }}
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    {{ form_label(form.dateDebut) }}
+                  </td>
+                  <td>
+                    {{ form_widget(form.dateDebut) }}
+                    {{ form_errors(form.dateDebut) }}
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    {{ form_label(form.dateFin) }}
+                  </td>
+                  <td>
+                    {{ form_widget(form.dateFin) }}
+                    {{ form_errors(form.dateFin) }}
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    {{ form_label(form.commentaire) }}
+                  </td>
+                  <td>
+                    {{ form_widget(form.commentaire) }}
+                    {{ form_errors(form.commentaire) }}
+                  </td>
+              </tr>
+        </table>
+        <table>
+              <tr>
+                  <th>Vos destinations</th>
+              </tr>
+        </table>
+        <div id="carnetvoyage_mapbundle_voyagetype_destinations" data-prototype="{{ form_widget(form.destinations.vars.prototype)|e }}">
+            {% for destination in form.destinations %}
+                <table>
+                      <tr>
+                          <td>
+                            {{ form_label(destination.region) }}
+                          </td>
+                          <td>
+                            {{ form_widget(destination.region) }}
+                            {{ form_errors(destination.region) }}
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                            {{ form_label(destination.dateDebut) }}
+                          </td>
+                          <td>
+                            {{ form_widget(destination.dateDebut) }}
+                            {{ form_errors(destination.dateDebut) }}
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                            {{ form_label(destination.dateFin) }}
+                          </td>
+                          <td>
+                            {{ form_widget(destination.dateFin) }}
+                            {{ form_errors(destination.dateFin) }}
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                            {{ form_label(destination.commentaire) }}
+                          </td>
+                          <td>
+                            {{ form_widget(destination.commentaire) }}
+                            {{ form_errors(destination.commentaire) }}
+                          </td>
+                      </tr>
+                </table><br/><br/>
+            {% endfor %}
+        </div>
+      {{ form_rest(form) }}
+    <input type="submit" class="btn btn-primary" />
+  </form>
+</div>
+<script type="text/javascript">
+    var collectionHolder = $('#carnetvoyage_mapbundle_voyagetype_destinations');
+    var $addDestinationLink = $('<a href="#" class="add_destination_link">Ajouter une destination</a>');
+    //var $newLinkLi = $('<li></li>').append($addDestinationLink);
+
+    $(document).ready(function($) {
+        collectionHolder.children('table').addClass('dest');
+        
+        collectionHolder.append($addDestinationLink);
+        
+        collectionHolder.find('.dest').each(function() {
+            addDestinationFormDeleteLink($(this));
+        });
+        
+        $addDestinationLink.on('click', function(e) {
+            // empêche le lien de créer un « # » dans l'URL
+            e.preventDefault();
+
+            // ajoute un nouveau formulaire destination
+            addDestinationForm(collectionHolder, $addDestinationLink);
+        });
+        
+        jQuery.datepicker.setDefaults($.datepicker.regional['fr']);
+            $('.date').datepicker({
+                dateFormat: 'yy-mm-dd', 
+                changeYear: true, 
+                changeMonth: true, 
+                monthNamesShort: ['Jan','F&eacute;v','Mar','Avr','Mai','Juin','Juil','Ao&ucirc;t','Sep','Oct','Nov','D&eacute;c'],
+                yearRange: '1900:2020' // panel des années affichées dans le calendrier
+            });
+            
+         $('select.select_region').select2({ 
+             placeholder: "Sélectionner une région",
+             allowClear: true
+         });
+        
+    });
+
+    function addDestinationForm(collectionHolder, $newLinkLi) {
+        // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
+        var prototype = collectionHolder.attr('data-prototype');
+
+        // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
+        // la longueur de la collection courante
+        var newForm = prototype.replace(/\$\$name\$\$/g, collectionHolder.children('table').length);
+
+
+        // Affiche le formulaire dans la page dans un li, avant le lien "ajouter une destination"
+        //var $newFormLi = $('<li></li>').append(newForm);
+        $newLinkLi.before(newForm);
+        
+        jQuery.datepicker.setDefaults($.datepicker.regional['fr']);
+            $('.date').datepicker({
+                dateFormat: 'yy-mm-dd', 
+                changeYear: true, 
+                changeMonth: true, 
+                monthNamesShort: ['Jan','F&eacute;v','Mar','Avr','Mai','Juin','Juil','Ao&ucirc;t','Sep','Oct','Nov','D&eacute;c'],
+                yearRange: '1900:2020' // panel des années affichées dans le calendrier
+            });
+            
+            $('select.select_region').select2({
+                placeholder: "Sélectionner une région",
+                allowClear: true  
+            });
+    };
+    
+    function addDestinationFormDeleteLink($tagFormLi) {
+        var $removeFormA = $('<a href="#">Supprimer cette destination</a>');
+        $tagFormLi.append($removeFormA);
+
+        $removeFormA.on('click', function(e) {
+            // empêche le lien de créer un « # » dans l'URL
+            e.preventDefault();
+
+            // supprime l'élément li pour le formulaire de tag
+            $tagFormLi.remove();
+        });
+    }
+
+</script>
