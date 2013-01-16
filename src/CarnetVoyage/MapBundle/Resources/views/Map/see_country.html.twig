@@ -3,29 +3,64 @@
 {% extends "CarnetVoyageMapBundle::layout.html.twig" %}
 
 {% block title %}{{ parent() }} - {{ valeur }}{% endblock %}
-       
+
 {% block body %}       
     {% block javascripts %}{{ parent() }}{% endblock %}  
-        <h1>Souvenir de voyage : {{ valeur }}</h1>
-        <div id='worldmap' style='width: 1250px; height: 800px;'></div>
-        
-        <script type="text/javascript">
-            $(document).ready(function() {
-		$('#worldmap').vectorMap({
-		    map: '{{ valeur }}',
-			hoverOpacity: 0.5,
-			hoverColor: false,
-                        colors: {{ region_visite|raw }}, 
-			backgroundColor: "#ffffff",
-			borderColor: "#000000",
-			selectedColor: "#EC0000",
-			//enableZoom: true,
-			//showTooltip: true,
-		    onRegionClick: function(element, pays)
-		    {
-		        
-		    }
-		});
+    <h1>Souvenir de voyage : {{ valeur }}</h1>
+    <div id='worldmap' style='width: 1250px; height: 800px;'>
+        <!-- This is the container for the carousel. 
+        <div id = "carousel1" style="width:800px; height:350px;background:transparent;overflow:scroll;">            
+            <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
+            <!-- You can place links around these images 
+                <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img1.jpg') }}" width="177" height="178" alt="Flag 1 Description" title="Flag 1 Title" />
+                <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img2.jpg') }}" width="177" height="178" alt="Flag 2 Description" title="Flag 2 Title" />
+                <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img3.jpg') }}" width="177" height="178" alt="Flag 3 Description" title="Flag 3 Title" />
+                <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img4.jpg') }}" width="177" height="178" title="Flag 4 Title" />
+        </div>
+
+        <!-- Define left and right buttons. 
+        <input id="left-but"  type="button" value="Left" />
+        <input id="right-but" type="button" value="Right" />
+
+        <!-- Define elements to accept the alt and title text from the images. 
+        <p id="title-text"></p>
+        <p id="alt-text"></p>-->
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() 
+        {
+            var label = {{ label_region|raw }};
+            $('#worldmap').vectorMap(
+            {
+                map: '{{ valeur }}',
+                hoverOpacity: 0.5,
+                hoverColor: false,
+                colors: {{ couleur_region|raw }}, 
+                backgroundColor: "#ffffff",
+                borderColor: "#000000",
+                selectedColor: "#EC0000",
+                
+                onRegionClick: function(element, pays)
+                {
+
+                },
+                
+                onLabelShow: function(e, label, code)
+                {
+                    label.html(''+label.text()+'<br/>'+
+                    label[code]);
+                }
             });
-       </script>
+            //$("#carousel1").CloudCarousel(		
+            //{			
+                //	xPos: 128,
+                //	yPos: 32,
+                //	buttonLeft: $("#left-but"),
+                //	buttonRight: $("#right-but"),
+                //	altBox: $("#alt-text"),
+                //	titleBox: $("#title-text"),
+                //      mouseWheel:true,
+            //});
+        });
+    </script>
 {% endblock %}

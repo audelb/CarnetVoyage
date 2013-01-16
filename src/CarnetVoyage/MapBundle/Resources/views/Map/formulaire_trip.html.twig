@@ -139,12 +139,13 @@
 
         // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
         // la longueur de la collection courante
-        var newForm = prototype.replace(/\$\$name\$\$/g, collectionHolder.children('table').length);
-
+        var newForm = prototype.replace(/\$\$name\$\$/g, collectionHolder.children('.dest').length);
+        
+        //alert(collectionHolder.children('.dest').length);
 
         // Affiche le formulaire dans la page dans un li, avant le lien "ajouter une destination"
-        //var $newFormLi = $('<li></li>').append(newForm);
-        $newLinkLi.before(newForm);
+        var $newFormLi = $('<div class = "dest"></div>').append(newForm);
+        $newLinkLi.before($newFormLi);
         
         jQuery.datepicker.setDefaults($.datepicker.regional['fr']);
             $('.date').datepicker({

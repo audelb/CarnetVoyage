@@ -6,27 +6,32 @@
      
 {% block body %}       
     {% block javascripts %}{{ parent() }}{% endblock %}  
-        <h1>Bienvenue sur votre carnet de voyage</h1>
-        <div id='worldmap' style='width: 1250px; height: 800px;'></div>
-        <script type="text/javascript">
-            $(document).ready(function() {
-		$('#worldmap').vectorMap({
-		    map: 'world',
-			hoverOpacity: 0.5,
-			hoverColor: false,
-			backgroundColor: "#0080FF",
-                        colors: {{ pays_visite|raw }},
-		    onRegionClick: function(element, pays)
-		    {
-                        element.preventDefault();
-                            // catch the href value
-
-                        var redirect = "./see_country/" + pays;
-
-                        // finally relocate the user to where the href says so.
-                        return $(location).attr('href',redirect);
-                       }
-                                });
+    <h1>Bienvenue sur votre carnet de voyage</h1>
+    <div id='worldmap' style='width: 1250px; height: 800px;'></div>
+    <script type="text/javascript">
+        $(document).ready(function() 
+        {
+            var label = {{ label_pays|raw }};
+            $('#worldmap').vectorMap({
+                map: 'world',
+                hoverOpacity: 0.5,
+                hoverColor: false,
+                backgroundColor: "#0080FF",
+                colors: {{ couleur_pays|raw }},
+                
+                onRegionClick: function(element, pays) //Click sur un pays
+                {
+                    element.preventDefault(); 
+                    var redirect = "./see_country/" + pays; //renvoie vers la page du pays sélectionné
+                    return $(location).attr('href',redirect);
+                },
+                
+                onLabelShow: function(e, label, code) //affichage du label
+                {
+                    label.html(''+label.text()+'<br/>'+ //nom du pays (déclaré dans le fichier js)
+                    label[code]); // + la liste des voyages (défini dans le controller)
+                }
             });
-       </script>
+        });
+    </script>
 {% endblock %}
