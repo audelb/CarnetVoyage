@@ -2249,7 +2249,7 @@ table th[class*="span"],
   width: 14px;
   height: 14px;
   margin-top: 1px;
-  *margin-right: .3em;
+  margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
   background-image: url("../img/glyphicons-halflings.png");
@@ -6036,4 +6036,23 @@ a.badge:hover {
 
 .affix {
   position: fixed;
+}
+
+#left-but {
+    background: url("../images/icons/left_arrow.gif") no-repeat scroll 0 0 transparent;
+    right: 64px;
+}
+
+#right-but {
+    background: url("../images/icons/right_arrow.gif") no-repeat scroll 0 0 transparent;
+    right: 20px;
+}
+
+.carouselBut {
+    display: inline;
+    position: absolute;
+    
+    top: 0px;
+    height: 40px;
+    width: 40px;
 }

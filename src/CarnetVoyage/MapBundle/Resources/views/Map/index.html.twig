@@ -11,25 +11,25 @@
     <script type="text/javascript">
         $(document).ready(function() 
         {
-            var label = {{ label_pays|raw }};
+            var labelPerso = {{ labelPays|raw }};
             $('#worldmap').vectorMap({
                 map: 'world',
                 hoverOpacity: 0.5,
                 hoverColor: false,
                 backgroundColor: "#0080FF",
-                colors: {{ couleur_pays|raw }},
+                colors: {{ couleurPays|raw }},
                 
                 onRegionClick: function(element, pays) //Click sur un pays
                 {
                     element.preventDefault(); 
-                    var redirect = "./see_country/" + pays; //renvoie vers la page du pays sélectionné
+                    var redirect = "./seeCountry/" + pays; //renvoie vers la page du pays sélectionné
                     return $(location).attr('href',redirect);
                 },
                 
                 onLabelShow: function(e, label, code) //affichage du label
                 {
                     label.html(''+label.text()+'<br/>'+ //nom du pays (déclaré dans le fichier js)
-                    label[code]); // + la liste des voyages (défini dans le controller)
+                    labelPerso[code]); // + la liste des voyages (défini dans le controller)
                 }
             });
         });

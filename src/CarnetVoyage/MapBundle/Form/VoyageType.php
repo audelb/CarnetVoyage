@@ -28,7 +28,7 @@ class VoyageType extends AbstractType
                 'label'=>'quelques commentaires ...'))
             ->add('destinations', 'collection', array('type' => new DestinationType(),
                 'options'  => array(
-                    'choices'  => $options['pays_region']),
+                    'choices'  => $options['paysRegion']),
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'by_reference' => false,
@@ -46,7 +46,7 @@ class VoyageType extends AbstractType
     public function getDefaultOptions(array $options){
         return array(
             'data_class'      => 'CarnetVoyage\MapBundle\Entity\Voyage',
-            'pays_region'   => array()
+            'paysRegion'   => array()
         );
     }
 
