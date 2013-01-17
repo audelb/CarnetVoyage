@@ -1,0 +1,77 @@
+{# src/CarnetVoyage/MapBundle/Resources/views/Map/see_country.html.twig #}
+
+{% extends "CarnetVoyageMapBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - {{ valeur }}{% endblock %}
+
+{% block body %}       
+    {% block javascripts %}{{ parent() }}{% endblock %}  
+    <h1>Souvenir de voyage : {{ valeur }}</h1>
+        <!-- This is the container for the carousel. -->
+        <div id = "carousel1" style="width:800px; height:350px;background:transparent;overflow:scroll;">            
+            <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
+            <!-- You can place links around these images -->
+            <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img1.jpg') }}" width="177" height="178" alt="Flag 1 Description" title="Flag 1 Title" />
+            <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img2.jpg') }}" width="177" height="178" alt="Flag 2 Description" title="Flag 2 Title" />
+            <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img3.jpg') }}" width="177" height="178" alt="Flag 3 Description" title="Flag 3 Title" />
+            <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img4.jpg') }}" width="177" height="178" alt="Flag 4 Description" title="Flag 4 Title" />
+
+            <!-- Define left and right buttons. -->
+            <div id="left-but" class="carouselBut"></div>
+            <div id="right-but" class="carouselBut"></div>
+            <!-- Define elements to accept the alt and title text from the images. -->
+            <div id="carousel-title" style="display: block; color: white"></div>
+            <div id="carousel-alt" style="display: block; color: white"></div>
+        </div>
+        <ul id="toto"></ul>
+    <div id='worldmap' style='width: 1250px; height: 800px;'>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() 
+        {
+            var labelPerso = {{ labelRegion|raw }};
+            
+            //cacher le div du carousel
+            $('#carousel1').hide();
+            
+            $('#worldmap').vectorMap(
+            {
+                map: '{{ valeur }}',
+                hoverOpacity: 0.5,
+                hoverColor: false,
+                colors: {{ couleurRegion|raw }}, 
+                backgroundColor: "#ffffff",
+                borderColor: "#000000",
+                selectedColor: "#EC0000",
+                
+                onRegionClick: function(element, pays)
+                {
+                    $('#carousel1').bPopup();
+                    //var toto = ;
+                    //$('#toto').append("{% render "CarnetVoyageMapBundle:Map:listTrip" %}");
+                },
+                
+                onLabelShow: function(e, label, code)
+                {
+                    label.html(''+label.text()+'<br/>'+
+                    labelPerso[code]);
+                }
+            });
+            $("#carousel1").CloudCarousel(		
+            {			
+                xPos: 500,
+                yPos: 50,
+                yRadius:100,
+                reflHeight: 56,
+                reflGap:2, 
+                buttonLeft: $("#left-but"),
+                buttonRight: $("#right-but"),
+                altBox: $("#carousel-alt"),
+                titleBox: $("#carousel-title"),
+                autoRotate: 'right',
+                autoRotateDelay: 6000,
+                speed:0.1, 
+            });
+        });
+    </script>
+{% endblock %}
