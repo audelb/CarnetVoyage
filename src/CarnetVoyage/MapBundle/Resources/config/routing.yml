@@ -3,23 +3,23 @@ CarnetVoyageMapAcceuil:
     defaults: { _controller: CarnetVoyageMapBundle:Map:index, format: json }
     
 CarnetVoyageMapVoirPays:
-    pattern:  /see_country/{id}
-    defaults: { _controller: CarnetVoyageMapBundle:Map:see_country, format: html }
+    pattern:  /seeCountry/{id}
+    defaults: { _controller: CarnetVoyageMapBundle:Map:seeCountry, format: html }
     requirements:
         format: html|xml
     
 CarnetVoyageMapAjouterVoyage:
-    pattern:   /new_trip
-    defaults:  { _controller: CarnetVoyageMapBundle:Map:new_trip }
+    pattern:   /newTrip
+    defaults:  { _controller: CarnetVoyageMapBundle:Map:newTrip }
 
 CarnetVoyageMapListerVoyage:
-    pattern:   /list_trip
-    defaults:  { _controller: CarnetVoyageMapBundle:Map:list_trip }
+    pattern:   /listTrip
+    defaults:  { _controller: CarnetVoyageMapBundle:Map:listTrip }
         
 CarnetVoyageMapModifierVoyage:
-    pattern:   /modify_trip/{id}
-    defaults:  { _controller: CarnetVoyageMapBundle:Map:modify_trip }
+    pattern:   /modifyTrip/{id}
+    defaults:  { _controller: CarnetVoyageMapBundle:Map:modifyTrip }
     
 CarnetVoyageMapSupprimerVoyage:
-    pattern:   /delete_trip/{id}
-    defaults:  { _controller: CarnetVoyageMapBundle:Map:delete_trip }      
+    pattern:   /deleteTrip/{id}
+    defaults:  { _controller: CarnetVoyageMapBundle:Map:deleteTrip }      

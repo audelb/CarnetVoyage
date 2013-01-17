@@ -98,18 +98,22 @@
 <script type="text/javascript">
     var collectionHolder = $('#carnetvoyage_mapbundle_voyagetype_destinations');
     var $addDestinationLink = $('<a href="#" class="add_destination_link">Ajouter une destination</a>');
-    //var $newLinkLi = $('<li></li>').append($addDestinationLink);
 
-    $(document).ready(function($) {
+    $(document).ready(function($) 
+    {
         collectionHolder.children('table').addClass('dest');
         
+        //ajoute un lien d'ajout d'une destination
         collectionHolder.append($addDestinationLink);
         
-        collectionHolder.find('.dest').each(function() {
+        // ajoute un lien de suppression de la destination
+        collectionHolder.find('.dest').each(function() 
+        {
             addDestinationFormDeleteLink($(this));
         });
         
-        $addDestinationLink.on('click', function(e) {
+        $addDestinationLink.on('click', function(e) 
+        {
             // empêche le lien de créer un « # » dans l'URL
             e.preventDefault();
 
@@ -117,52 +121,30 @@
             addDestinationForm(collectionHolder, $addDestinationLink);
         });
         
-        jQuery.datepicker.setDefaults($.datepicker.regional['fr']);
-            $('.date').datepicker({
-                dateFormat: 'yy-mm-dd', 
-                changeYear: true, 
-                changeMonth: true, 
-                monthNamesShort: ['Jan','F&eacute;v','Mar','Avr','Mai','Juin','Juil','Ao&ucirc;t','Sep','Oct','Nov','D&eacute;c'],
-                yearRange: '1900:2020' // panel des années affichées dans le calendrier
-            });
-            
-         $('select.select_region').select2({ 
-             placeholder: "Sélectionner une région",
-             allowClear: true
-         });
+        // ajoute les plugins datepicker, select2
+        addPlugins();
         
     });
 
-    function addDestinationForm(collectionHolder, $newLinkLi) {
+    function addDestinationForm(collectionHolder, $newLinkLi) 
+    {
         // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
         var prototype = collectionHolder.attr('data-prototype');
 
-        // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
-        // la longueur de la collection courante
+        // Remplace '$$name$$' dans le HTML du prototype par un nombre basé sur
+        // le nombre de formulaire destination déjà affiché
         var newForm = prototype.replace(/\$\$name\$\$/g, collectionHolder.children('.dest').length);
-        
-        //alert(collectionHolder.children('.dest').length);
 
-        // Affiche le formulaire dans la page dans un li, avant le lien "ajouter une destination"
+        // Affiche le formulaire dans la page dans un div, avant le lien "ajouter une destination"
         var $newFormLi = $('<div class = "dest"></div>').append(newForm);
         $newLinkLi.before($newFormLi);
         
-        jQuery.datepicker.setDefaults($.datepicker.regional['fr']);
-            $('.date').datepicker({
-                dateFormat: 'yy-mm-dd', 
-                changeYear: true, 
-                changeMonth: true, 
-                monthNamesShort: ['Jan','F&eacute;v','Mar','Avr','Mai','Juin','Juil','Ao&ucirc;t','Sep','Oct','Nov','D&eacute;c'],
-                yearRange: '1900:2020' // panel des années affichées dans le calendrier
-            });
-            
-            $('select.select_region').select2({
-                placeholder: "Sélectionner une région",
-                allowClear: true  
-            });
+        addPlugins();
+        
     };
     
-    function addDestinationFormDeleteLink($tagFormLi) {
+    function addDestinationFormDeleteLink($tagFormLi) 
+    {
         var $removeFormA = $('<a href="#">Supprimer cette destination</a>');
         $tagFormLi.append($removeFormA);
 
@@ -174,5 +156,24 @@
             $tagFormLi.remove();
         });
     }
-
+    
+    function addPlugins()
+    {
+        jQuery.datepicker.setDefaults($.datepicker.regional['fr']);
+        $('.date').datepicker(
+        {
+            dateFormat: 'yy-mm-dd', 
+            changeYear: true, 
+            changeMonth: true, 
+            monthNamesShort: ['Jan','F&eacute;v','Mar','Avr','Mai','Juin','Juil','Ao&ucirc;t','Sep','Oct','Nov','D&eacute;c'],
+            yearRange: '1900:2020' // panel des années affichées dans le calendrier
+        });
+            
+        $('select.select_region').select2(
+        {
+            placeholder: "Sélectionner une région",
+            allowClear: true  
+        });
+    }
+     
 </script>
