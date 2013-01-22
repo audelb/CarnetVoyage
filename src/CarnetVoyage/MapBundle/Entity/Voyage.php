@@ -178,4 +178,9 @@ class Voyage
     {
         return $this->destinations->count();
     }
+	
+	public function isDatesValid()
+	{
+    	return ($this->dateFin >= $this->dateDebut);
+	}
 }

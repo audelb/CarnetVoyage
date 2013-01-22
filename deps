@@ -67,10 +67,15 @@
 
 [DoctrineFixturesBundle]
     git=http://github.com/doctrine/DoctrineFixturesBundle.git
-    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+    target=bundles/Symfony/Bundle/DoctrineFixturesBundle
     version=origin/2.0
 
 [GenemuFormBundle]
     git=https://github.com/genemu/GenemuFormBundle.git
     target=bundles/Genemu/Bundle/FormBundle
+    version=origin/2.0
+    
+[PropelBundle]
+    git=https://github.com/propelorm/PropelBundle.git
+    target=bundles/Propel/PropelBundle
     version=origin/2.0
