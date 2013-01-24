@@ -1,0 +1,18 @@
+digraph G {
+"Contenu" [label="{<table>Contenu|<cols>id (INTEGER) [PK]\ldestination_id (INTEGER) [FK]\lnom (VARCHAR)\lchemin (VARCHAR)\ldate (DATE)\lcommentaire (CLOB)\l}", shape=record];
+"Destination" [label="{<table>Destination|<cols>id (INTEGER) [PK]\lregion_id (INTEGER) [FK]\lvoyage_id (INTEGER) [FK]\ldateDebut (DATE)\ldateFin (DATE)\lcommentaire (CLOB)\l}", shape=record];
+"Pays" [label="{<table>Pays|<cols>id (INTEGER) [PK]\lvaleur (VARCHAR)\lnom_fichier (VARCHAR)\lvaleur_fichier (VARCHAR)\l}", shape=record];
+"Region" [label="{<table>Region|<cols>id (INTEGER) [PK]\lpays_id (INTEGER) [FK]\lvaleur (VARCHAR)\l}", shape=record];
+"TypeVisitable" [label="{<table>TypeVisitable|<cols>id (INTEGER) [PK]\lvaleur (VARCHAR)\l}", shape=record];
+"Visitable" [label="{<table>Visitable|<cols>id (INTEGER) [PK]\lregion_id (INTEGER) [FK]\ltypevisitable_id (INTEGER) [FK]\lvaleur (VARCHAR)\l}", shape=record];
+"Visite" [label="{<table>Visite|<cols>id (INTEGER) [PK]\ldestination_id (INTEGER) [FK]\lvisitable_id (INTEGER) [FK]\lcommentaire (CLOB)\l}", shape=record];
+"Voyage" [label="{<table>Voyage|<cols>id (INTEGER) [PK]\ldateDebut (DATE)\ldateFin (DATE)\lnom (VARCHAR)\lcommentaire (CLOB)\l}", shape=record];
+"Contenu":cols -> "Destination":table [label="destination_id=id"];
+"Destination":cols -> "Region":table [label="region_id=id"];
+"Destination":cols -> "Voyage":table [label="voyage_id=id"];
+"Region":cols -> "Pays":table [label="pays_id=id"];
+"Visitable":cols -> "Region":table [label="region_id=id"];
+"Visitable":cols -> "TypeVisitable":table [label="typevisitable_id=id"];
+"Visite":cols -> "Destination":table [label="destination_id=id"];
+"Visite":cols -> "Visitable":table [label="visitable_id=id"];
+}

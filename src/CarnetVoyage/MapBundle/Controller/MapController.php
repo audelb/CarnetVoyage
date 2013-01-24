@@ -6,12 +6,20 @@ namespace CarnetVoyage\MapBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use CarnetVoyage\MapBundle\Entity\Voyage;
-use CarnetVoyage\MapBundle\Form\VoyageType;
-use CarnetVoyage\MapBundle\Entity\Pays;
-use CarnetVoyage\MapBundle\Entity\Region;
-use CarnetVoyage\MapBundle\Entity\DestinationRepository;
-use CarnetVoyage\MapBundle\Entity\Destination;
+//use CarnetVoyage\MapBundle\Entity\Voyage;
+//use CarnetVoyage\MapBundle\Form\VoyageType;
+//use CarnetVoyage\MapBundle\Entity\Pays;
+//use CarnetVoyage\MapBundle\Entity\Region;
+//use CarnetVoyage\MapBundle\Entity\DestinationRepository;
+//use CarnetVoyage\MapBundle\Entity\Destination;
+use CarnetVoyage\MapBundle\Model\Destination;
+use CarnetVoyage\MapBundle\Model\DestinationQuery;
+use CarnetVoyage\MapBundle\Model\Pays;
+use CarnetVoyage\MapBundle\Model\PaysQuery;
+use CarnetVoyage\MapBundle\Model\Region;
+use CarnetVoyage\MapBundle\Model\RegionQuery;
+use CarnetVoyage\MapBundle\Model\Voyage;
+use CarnetVoyage\MapBundle\Model\VoyageQuery;
 
 class MapController extends Controller
 {
@@ -21,16 +29,20 @@ class MapController extends Controller
     public function indexAction()
     {
         //récupérer toutes les destinations visitées
-        $listDestination = $this->getDoctrine()
+        /*$listDestination = $this->getDoctrine()
                 ->getEntityManager()
                 ->getRepository('CarnetVoyageMapBundle:Destination')
-                ->findAll();
-
+                ->findAll();*/
+        $listDestination = DestinationQuery::create()
+                ->find();        
+                
         //liste des pays
-        $listCountry = $this->getDoctrine()
+        /*$listCountry = $this->getDoctrine()
                 ->getRepository('CarnetVoyageMapBundle:Pays')
-                ->findAll();
-
+                ->findAll();*/
+        $listCountry = PaysQuery::create()
+		        ->find();         
+                
         $listColorCountry = array(); //déclaration d'un tableau des pays visités
         $listLabelCountry = array(); //déclaration d'un tableau des labels par pays 
 
@@ -80,9 +92,11 @@ class MapController extends Controller
     public function listTripAction()
     {
         //liste des voyages
-        $trips = $this->getDoctrine()
+        /*$trips = $this->getDoctrine()
                 ->getRepository('CarnetVoyageMapBundle:Voyage')
-                ->findAll();
+                ->findAll();*/                
+        $trips = VoyageQuery::create()
+		        ->find();        
 
         return $this->render('CarnetVoyageMapBundle:Map:listTrip.html.twig', array('trips' => $trips));
     }
@@ -95,20 +109,27 @@ class MapController extends Controller
     public function seeCountryAction($id)
     {
         // récupérer l'id du pays
-        $country = $this->getDoctrine()
+        /*$country = $this->getDoctrine()
                 ->getRepository('CarnetVoyageMapBundle:Pays')
-                ->find($id);
-
+                ->find($id);*/
+        $country = PaysQuery::create()
+                ->findPk($id);
+				
         //liste des destinations
-        $listDestination = $this->getDoctrine()
+        /*$listDestination = $this->getDoctrine()
                 ->getEntityManager()
                 ->getRepository('CarnetVoyageMapBundle:Destination')
-                ->findAll();
-
+                ->findAll();*/
+        $listDestination = DestinationQuery::create()
+	            ->find();
+                
         // liste des regions du pays
-        $listRegion = $this->getDoctrine()
+        /*$listRegion = $this->getDoctrine()
                 ->getRepository('CarnetVoyageMapBundle:Region')
-                ->findBy(array ('pays' => $country->getId()));
+                ->findBy(array ('pays' => $country->getId()));*/
+        $listRegion = RegionQuery::create()
+		        ->filterByPays($country)
+				->findOne();        
 
         $listColorRegion = array(); //déclaration d'un tableau des couleurs de chaque région
         $listLabelRegion = array(); //déclaration d'un tableau des labels de chaque région
@@ -265,5 +286,10 @@ class MapController extends Controller
                 ->getSelectList();
 
         return $tab;
+    }
+	
+	public function deleteTripAction($id)
+    {
+        return $this->render('CarnetVoyageMapBundle:Map:deleteTrip.html.twig');
     }
 }
