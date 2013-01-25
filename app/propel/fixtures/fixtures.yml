@@ -1,0 +1,1017 @@
+CarnetVoyage\MapBundle\Model\Pays:
+  Pays_1:
+    id: '1'
+    valeur: Georgie
+    nom_fichier: georgie
+    valeur_fichier: georgie
+  Pays_2:
+    id: '2'
+    valeur: France
+    nom_fichier: france
+    valeur_fichier: france
+  Pays_3:
+    id: '3'
+    valeur: Indonésie
+    nom_fichier: indonésie
+    valeur_fichier: indonésie
+  Pays_4:
+    id: '4'
+    valeur: Pérou
+    nom_fichier: pérou
+    valeur_fichier: pérou
+  Pays_5:
+    id: '5'
+    valeur: 'Burkina Faso'
+    nom_fichier: burkina_faso
+    valeur_fichier: 'burkina faso'
+  Pays_6:
+    id: '6'
+    valeur: Libye
+    nom_fichier: libye
+    valeur_fichier: libye
+  Pays_7:
+    id: '7'
+    valeur: Biélorussie
+    nom_fichier: bielorussie
+    valeur_fichier: bielorussie
+  Pays_8:
+    id: '8'
+    valeur: Pakistan
+    nom_fichier: pakistan
+    valeur_fichier: pakistan
+  Pays_9:
+    id: '9'
+    valeur: 'Côte d''Ivoire'
+    nom_fichier: cote_d_ivoire
+    valeur_fichier: 'cote d ivoire'
+  Pays_10:
+    id: '10'
+    valeur: Algérie
+    nom_fichier: algérie
+    valeur_fichier: algérie
+  Pays_11:
+    id: '11'
+    valeur: Suisse
+    nom_fichier: suisse
+    valeur_fichier: suisse
+  Pays_12:
+    id: '12'
+    valeur: Cameroun
+    nom_fichier: cameroun
+    valeur_fichier: cameroun
+  Pays_13:
+    id: '13'
+    valeur: Macédoine
+    nom_fichier: macedoine
+    valeur_fichier: macedoine
+  Pays_14:
+    id: '14'
+    valeur: Botswana
+    nom_fichier: botswana
+    valeur_fichier: botswana
+  Pays_15:
+    id: '15'
+    valeur: Ukraine
+    nom_fichier: ukraine
+    valeur_fichier: ukraine
+  Pays_16:
+    id: '16'
+    valeur: Kenya
+    nom_fichier: kenya
+    valeur_fichier: kenya
+  Pays_17:
+    id: '17'
+    valeur: Jordanie
+    nom_fichier: jordanie
+    valeur_fichier: jordanie
+  Pays_18:
+    id: '18'
+    valeur: Mali
+    nom_fichier: mali
+    valeur_fichier: mali
+  Pays_19:
+    id: '19'
+    valeur: 'République Démocratique du Congo'
+    nom_fichier: république_démocratique_congo
+    valeur_fichier: 'république démocratique congo'
+  Pays_20:
+    id: '20'
+    valeur: Somalie
+    nom_fichier: somalie
+    valeur_fichier: somalie
+  Pays_21:
+    id: '21'
+    valeur: Afghanistan
+    nom_fichier: afghanistan
+    valeur_fichier: afghanistan
+  Pays_22:
+    id: '22'
+    valeur: Ghana
+    nom_fichier: ghana
+    valeur_fichier: ghana
+  Pays_23:
+    id: '23'
+    valeur: Autriche
+    nom_fichier: autriche
+    valeur_fichier: autriche
+  Pays_24:
+    id: '24'
+    valeur: Ouganda
+    nom_fichier: ouganda
+    valeur_fichier: ouganda
+  Pays_25:
+    id: '25'
+    valeur: Colombie
+    nom_fichier: colombie
+    valeur_fichier: colombie
+  Pays_26:
+    id: '26'
+    valeur: Iraq
+    nom_fichier: irak
+    valeur_fichier: irak
+  Pays_27:
+    id: '27'
+    valeur: Niger
+    nom_fichier: niger
+    valeur_fichier: niger
+  Pays_28:
+    id: '28'
+    valeur: Lettonie
+    nom_fichier: lettonie
+    valeur_fichier: lettonie
+  Pays_29:
+    id: '29'
+    valeur: Roumanie
+    nom_fichier: roumanie
+    valeur_fichier: roumanie
+  Pays_30:
+    id: '30'
+    valeur: Zambie
+    nom_fichier: zambie
+    valeur_fichier: zambie
+  Pays_31:
+    id: '31'
+    valeur: Ethiopie
+    nom_fichier: ethiopie
+    valeur_fichier: ethiopie
+  Pays_32:
+    id: '32'
+    valeur: Guatemala
+    nom_fichier: guatemala
+    valeur_fichier: guatemala
+  Pays_33:
+    id: '33'
+    valeur: Suriname
+    nom_fichier: suriname
+    valeur_fichier: suriname
+  Pays_34:
+    id: '34'
+    valeur: 'Sahara Occidental'
+    nom_fichier: sahara_occidental
+    valeur_fichier: 'sahara occidental'
+  Pays_35:
+    id: '35'
+    valeur: 'République tchèque'
+    nom_fichier: république_tchèque
+    valeur_fichier: 'république tchèque'
+  Pays_36:
+    id: '36'
+    valeur: Tchad
+    nom_fichier: tchad
+    valeur_fichier: tchad
+  Pays_37:
+    id: '37'
+    valeur: Albanie
+    nom_fichier: albanie
+    valeur_fichier: albanie
+  Pays_38:
+    id: '38'
+    valeur: Syrie
+    nom_fichier: syrie
+    valeur_fichier: syrie
+  Pays_39:
+    id: '39'
+    valeur: Kirghizistan
+    nom_fichier: kirghizistan
+    valeur_fichier: kirghizistan
+  Pays_40:
+    id: '40'
+    valeur: 'Costa Rica'
+    nom_fichier: costa_rica
+    valeur_fichier: 'costa rica'
+  Pays_41:
+    id: '41'
+    valeur: Paraguay
+    nom_fichier: paraguay
+    valeur_fichier: paraguay
+  Pays_42:
+    id: '42'
+    valeur: Pologne
+    nom_fichier: pologne
+    valeur_fichier: pologne
+  Pays_43:
+    id: '43'
+    valeur: Namibie
+    nom_fichier: namibie
+    valeur_fichier: namibie
+  Pays_44:
+    id: '44'
+    valeur: 'Afrique du Sud'
+    nom_fichier: afrique_du_sud
+    valeur_fichier: 'afrique du sud'
+  Pays_45:
+    id: '45'
+    valeur: Egypte
+    nom_fichier: egypte
+    valeur_fichier: egypte
+  Pays_46:
+    id: '46'
+    valeur: Bosnie-Herzégovine
+    nom_fichier: bosnie_herzégovine
+    valeur_fichier: 'bosnie herzégovine'
+  Pays_47:
+    id: '47'
+    valeur: Salvador
+    nom_fichier: salvador
+    valeur_fichier: salvador
+  Pays_48:
+    id: '48'
+    valeur: Guyane
+    nom_fichier: guyane
+    valeur_fichier: guyane
+  Pays_49:
+    id: '49'
+    valeur: Belgique
+    nom_fichier: belgique
+    valeur_fichier: belgique
+  Pays_50:
+    id: '50'
+    valeur: Lesotho
+    nom_fichier: lesotho
+    valeur_fichier: lesotho
+  Pays_51:
+    id: '51'
+    valeur: Bulgarie
+    nom_fichier: bulgarie
+    valeur_fichier: bulgarie
+  Pays_52:
+    id: '52'
+    valeur: Burundi
+    nom_fichier: burundi
+    valeur_fichier: burundi
+  Pays_53:
+    id: '53'
+    valeur: Djibouti
+    nom_fichier: djibouti
+    valeur_fichier: djibouti
+  Pays_54:
+    id: '54'
+    valeur: Uruguay
+    nom_fichier: uruguay
+    valeur_fichier: uruguay
+  Pays_55:
+    id: '55'
+    valeur: Congo
+    nom_fichier: congo
+    valeur_fichier: congo
+  Pays_56:
+    id: '56'
+    valeur: Rwanda
+    nom_fichier: rwanda
+    valeur_fichier: rwanda
+  Pays_57:
+    id: '57'
+    valeur: Arménie
+    nom_fichier: arménie
+    valeur_fichier: arménie
+  Pays_58:
+    id: '58'
+    valeur: Sénégal
+    nom_fichier: sénégal
+    valeur_fichier: sénégal
+  Pays_59:
+    id: '59'
+    valeur: Togo
+    nom_fichier: togo
+    valeur_fichier: togo
+  Pays_60:
+    id: '60'
+    valeur: Hongrie
+    nom_fichier: hongrie
+    valeur_fichier: hongrie
+  Pays_61:
+    id: '61'
+    valeur: Malawi
+    nom_fichier: malawi
+    valeur_fichier: malawi
+  Pays_62:
+    id: '62'
+    valeur: Tadjikistan
+    nom_fichier: tadjikistan
+    valeur_fichier: tadjikistan
+  Pays_63:
+    id: '63'
+    valeur: Islande
+    nom_fichier: islande
+    valeur_fichier: islande
+  Pays_64:
+    id: '64'
+    valeur: Nicaragua
+    nom_fichier: nicaragua
+    valeur_fichier: nicaragua
+  Pays_65:
+    id: '65'
+    valeur: Maroc
+    nom_fichier: maroc
+    valeur_fichier: maroc
+  Pays_66:
+    id: '66'
+    valeur: Liberia
+    nom_fichier: liberia
+    valeur_fichier: liberia
+  Pays_67:
+    id: '67'
+    valeur: 'République Centrafricaine'
+    nom_fichier: république_centrafricaine
+    valeur_fichier: 'république centrafricaine'
+  Pays_68:
+    id: '68'
+    valeur: Slovaquie
+    nom_fichier: slovaquie
+    valeur_fichier: slovaquie
+  Pays_69:
+    id: '69'
+    valeur: Lituanie
+    nom_fichier: lituanie
+    valeur_fichier: lituanie
+  Pays_70:
+    id: '70'
+    valeur: Zimbabwe
+    nom_fichier: zimbabwe
+    valeur_fichier: zimbabwe
+  Pays_71:
+    id: '71'
+    valeur: Israël
+    nom_fichier: israël
+    valeur_fichier: israël
+  Pays_72:
+    id: '72'
+    valeur: Laos
+    nom_fichier: laos
+    valeur_fichier: laos
+  Pays_73:
+    id: '73'
+    valeur: 'Corée du Nord'
+    nom_fichier: corée_du_nord
+    valeur_fichier: 'corée du nord'
+  Pays_74:
+    id: '74'
+    valeur: Turkménistan
+    nom_fichier: turkménistan
+    valeur_fichier: turkménistan
+  Pays_75:
+    id: '75'
+    valeur: Bénin
+    nom_fichier: bénin
+    valeur_fichier: bénin
+  Pays_76:
+    id: '76'
+    valeur: Slovénie
+    nom_fichier: slovénie
+    valeur_fichier: slovénie
+CarnetVoyage\MapBundle\Model\Region:
+  Region_101:
+    id: '101'
+    pays_id: Pays_1
+    valeur: 'République autonome d''Abkhazie'
+  Region_102:
+    id: '102'
+    pays_id: Pays_1
+    valeur: 'Mingrélie et Haute-Svanétie'
+  Region_103:
+    id: '103'
+    pays_id: Pays_1
+    valeur: ' Gourie'
+  Region_104:
+    id: '104'
+    pays_id: Pays_1
+    valeur: 'République autonome d''Adjarie'
+  Region_105:
+    id: '105'
+    pays_id: Pays_1
+    valeur: 'Racha-Lechkhumi et Kvemo Svaneti'
+  Region_106:
+    id: '106'
+    pays_id: Pays_1
+    valeur: Iméréthie
+  Region_107:
+    id: '107'
+    pays_id: Pays_1
+    valeur: Samtskhe-Djavakheti
+  Region_108:
+    id: '108'
+    pays_id: Pays_1
+    valeur: 'Shida Kartli'
+  Region_109:
+    id: '109'
+    pays_id: Pays_1
+    valeur: Mtskheta-Mtianeti
+  Region_110:
+    id: '110'
+    pays_id: Pays_1
+    valeur: 'Kvemo Kartli'
+  Region_111:
+    id: '111'
+    pays_id: Pays_1
+    valeur: Kakhétie
+  Region_112:
+    id: '112'
+    pays_id: Pays_1
+    valeur: 'Ville de Tbilissi'
+  Region_201:
+    id: '201'
+    pays_id: Pays_2
+    valeur: Midi-Pyrénées
+  Region_202:
+    id: '202'
+    pays_id: Pays_2
+    valeur: Aquitaine
+  Region_203:
+    id: '203'
+    pays_id: Pays_2
+    valeur: Languedoc-Roussillon
+  Region_204:
+    id: '204'
+    pays_id: Pays_2
+    valeur: 'Provence-Alpes-Côte d''Azur'
+  Region_205:
+    id: '205'
+    pays_id: Pays_2
+    valeur: Poitou-Charentes
+  Region_206:
+    id: '206'
+    pays_id: Pays_2
+    valeur: Limousin
+  Region_207:
+    id: '207'
+    pays_id: Pays_2
+    valeur: Auvergne
+  Region_208:
+    id: '208'
+    pays_id: Pays_2
+    valeur: Bretagne
+  Region_209:
+    id: '209'
+    pays_id: Pays_2
+    valeur: Pays-de-la-Loire
+  Region_210:
+    id: '210'
+    pays_id: Pays_2
+    valeur: Basse-Normandie
+  Region_211:
+    id: '211'
+    pays_id: Pays_2
+    valeur: Centre
+  Region_212:
+    id: '212'
+    pays_id: Pays_2
+    valeur: Bourgogne
+  Region_213:
+    id: '213'
+    pays_id: Pays_2
+    valeur: Franche-Comté
+  Region_214:
+    id: '214'
+    pays_id: Pays_2
+    valeur: Alsace
+  Region_215:
+    id: '215'
+    pays_id: Pays_2
+    valeur: Lorraine
+  Region_216:
+    id: '216'
+    pays_id: Pays_2
+    valeur: Champagne-Ardenne
+  Region_217:
+    id: '217'
+    pays_id: Pays_2
+    valeur: Ile-de-France
+  Region_218:
+    id: '218'
+    pays_id: Pays_2
+    valeur: Picardie
+  Region_219:
+    id: '219'
+    pays_id: Pays_2
+    valeur: Haute-Normandie
+  Region_220:
+    id: '220'
+    pays_id: Pays_2
+    valeur: Nord-Pas-De-Calais
+  Region_221:
+    id: '221'
+    pays_id: Pays_2
+    valeur: Corse
+  Region_222:
+    id: '222'
+    pays_id: Pays_2
+    valeur: Rhône-Alpes
+  Region_301:
+    id: '301'
+    pays_id: Pays_3
+    valeur: ' Aceh'
+  Region_302:
+    id: '302'
+    pays_id: Pays_3
+    valeur: 'Sumatra du Nord'
+  Region_303:
+    id: '303'
+    pays_id: Pays_3
+    valeur: 'Sumatra Occidental'
+  Region_304:
+    id: '304'
+    pays_id: Pays_3
+    valeur: Riau
+  Region_305:
+    id: '305'
+    pays_id: Pays_3
+    valeur: Bengkulu
+  Region_306:
+    id: '306'
+    pays_id: Pays_3
+    valeur: Jambi
+  Region_307:
+    id: '307'
+    pays_id: Pays_3
+    valeur: 'Sumatra du Sud'
+  Region_308:
+    id: '308'
+    pays_id: Pays_3
+    valeur: Lampung
+  Region_309:
+    id: '309'
+    pays_id: Pays_3
+    valeur: Bangka-Belifung
+  Region_310:
+    id: '310'
+    pays_id: Pays_3
+    valeur: Banten
+  Region_311:
+    id: '311'
+    pays_id: Pays_3
+    valeur: Jakarta
+  Region_312:
+    id: '312'
+    pays_id: Pays_3
+    valeur: 'Java Occidental'
+  Region_313:
+    id: '313'
+    pays_id: Pays_3
+    valeur: 'Java Central'
+  Region_314:
+    id: '314'
+    pays_id: Pays_3
+    valeur: Yogyakarta
+  Region_315:
+    id: '315'
+    pays_id: Pays_3
+    valeur: 'Java Oriental'
+  Region_316:
+    id: '316'
+    pays_id: Pays_3
+    valeur: Bali
+  Region_317:
+    id: '317'
+    pays_id: Pays_3
+    valeur: 'Petites îles de la Sonde Occidentales'
+  Region_318:
+    id: '318'
+    pays_id: Pays_3
+    valeur: 'Petites îles de la Sonde Orientales'
+  Region_319:
+    id: '319'
+    pays_id: Pays_3
+    valeur: Molusques
+  Region_320:
+    id: '320'
+    pays_id: Pays_3
+    valeur: Papouasie
+  Region_321:
+    id: '321'
+    pays_id: Pays_3
+    valeur: 'Papouasie occidentale'
+  Region_322:
+    id: '322'
+    pays_id: Pays_3
+    valeur: 'Molusques du Nord'
+  Region_323:
+    id: '323'
+    pays_id: Pays_3
+    valeur: 'Sulawesi du Nord'
+  Region_324:
+    id: '324'
+    pays_id: Pays_3
+    valeur: Gorontalo
+  Region_325:
+    id: '325'
+    pays_id: Pays_3
+    valeur: 'Sulawesi Central'
+  Region_326:
+    id: '326'
+    pays_id: Pays_3
+    valeur: 'Sulawesi Occidental'
+  Region_327:
+    id: '327'
+    pays_id: Pays_3
+    valeur: 'Sulawesi du Sud'
+  Region_328:
+    id: '328'
+    pays_id: Pays_3
+    valeur: 'Sulawesi du Sud-Est'
+  Region_329:
+    id: '329'
+    pays_id: Pays_3
+    valeur: 'Kalimantan Oriental'
+  Region_330:
+    id: '330'
+    pays_id: Pays_3
+    valeur: 'Kalimantan du Sud'
+  Region_331:
+    id: '331'
+    pays_id: Pays_3
+    valeur: 'Kalimantan Central'
+  Region_332:
+    id: '332'
+    pays_id: Pays_3
+    valeur: 'Kalimantan Occidental'
+  Region_333:
+    id: '333'
+    pays_id: Pays_3
+    valeur: 'Iles Riau'
+  Region_401:
+    id: '401'
+    pays_id: Pays_4
+    valeur: Tumbes
+  Region_402:
+    id: '402'
+    pays_id: Pays_4
+    valeur: Piura
+  Region_403:
+    id: '403'
+    pays_id: Pays_4
+    valeur: Lambayeque
+  Region_404:
+    id: '404'
+    pays_id: Pays_4
+    valeur: Cajamarca
+  Region_405:
+    id: '405'
+    pays_id: Pays_4
+    valeur: Amazonas
+  Region_406:
+    id: '406'
+    pays_id: Pays_4
+    valeur: Loreto
+  Region_407:
+    id: '407'
+    pays_id: Pays_4
+    valeur: 'San Martín'
+  Region_408:
+    id: '408'
+    pays_id: Pays_4
+    valeur: 'La Libertad'
+  Region_409:
+    id: '409'
+    pays_id: Pays_4
+    valeur: Ancash
+  Region_410:
+    id: '410'
+    pays_id: Pays_4
+    valeur: Huánuco
+  Region_411:
+    id: '411'
+    pays_id: Pays_4
+    valeur: Ucayali
+  Region_412:
+    id: '412'
+    pays_id: Pays_4
+    valeur: Lima
+  Region_413:
+    id: '413'
+    pays_id: Pays_4
+    valeur: 'Province de Lima'
+  Region_414:
+    id: '414'
+    pays_id: Pays_4
+    valeur: Callao
+  Region_415:
+    id: '415'
+    pays_id: Pays_4
+    valeur: Pasco
+  Region_416:
+    id: '416'
+    pays_id: Pays_4
+    valeur: Junín
+  Region_417:
+    id: '417'
+    pays_id: Pays_4
+    valeur: Ica
+  Region_418:
+    id: '418'
+    pays_id: Pays_4
+    valeur: Huancavelica
+  Region_419:
+    id: '419'
+    pays_id: Pays_4
+    valeur: Ayacucho
+  Region_420:
+    id: '420'
+    pays_id: Pays_4
+    valeur: Cuzco
+  Region_421:
+    id: '421'
+    pays_id: Pays_4
+    valeur: 'Madre de Dios'
+  Region_422:
+    id: '422'
+    pays_id: Pays_4
+    valeur: Apurimac
+  Region_423:
+    id: '423'
+    pays_id: Pays_4
+    valeur: Arequipa
+  Region_424:
+    id: '424'
+    pays_id: Pays_4
+    valeur: Puno
+  Region_425:
+    id: '425'
+    pays_id: Pays_4
+    valeur: Moquegua
+  Region_426:
+    id: '426'
+    pays_id: Pays_4
+    valeur: Tacna
+  Region_427:
+    id: '427'
+    pays_id: Pays_4
+    valeur: Titicaca
+  Region_1101:
+    id: '1101'
+    pays_id: Pays_11
+    valeur: Genève
+  Region_1102:
+    id: '1102'
+    pays_id: Pays_11
+    valeur: Vaud
+  Region_1103:
+    id: '1103'
+    pays_id: Pays_11
+    valeur: Neuchâtel
+  Region_1104:
+    id: '1104'
+    pays_id: Pays_11
+    valeur: Jura
+  Region_1105:
+    id: '1105'
+    pays_id: Pays_11
+    valeur: Berne
+  Region_1106:
+    id: '1106'
+    pays_id: Pays_11
+    valeur: Fribourg
+  Region_1107:
+    id: '1107'
+    pays_id: Pays_11
+    valeur: Valais
+  Region_1108:
+    id: '1108'
+    pays_id: Pays_11
+    valeur: Tessin
+  Region_1109:
+    id: '1109'
+    pays_id: Pays_11
+    valeur: Soleure
+  Region_1110:
+    id: '1110'
+    pays_id: Pays_11
+    valeur: Bâle-Campagne
+  Region_1111:
+    id: '1111'
+    pays_id: Pays_11
+    valeur: Bâle-Ville
+  Region_1112:
+    id: '1112'
+    pays_id: Pays_11
+    valeur: Lucerne
+  Region_1113:
+    id: '1113'
+    pays_id: Pays_11
+    valeur: Obwald
+  Region_1114:
+    id: '1114'
+    pays_id: Pays_11
+    valeur: Nidwald
+  Region_1115:
+    id: '1115'
+    pays_id: Pays_11
+    valeur: Uri
+  Region_1116:
+    id: '1116'
+    pays_id: Pays_11
+    valeur: Grisons
+  Region_1117:
+    id: '1117'
+    pays_id: Pays_11
+    valeur: Saint-Gall
+  Region_1118:
+    id: '1118'
+    pays_id: Pays_11
+    valeur: 'Appenzell Rhodes-Intérieures'
+  Region_1119:
+    id: '1119'
+    pays_id: Pays_11
+    valeur: 'Appenzell Rhodes-Extérieures'
+  Region_1120:
+    id: '1120'
+    pays_id: Pays_11
+    valeur: Glaris
+  Region_1121:
+    id: '1121'
+    pays_id: Pays_11
+    valeur: Schwytz
+  Region_1122:
+    id: '1122'
+    pays_id: Pays_11
+    valeur: Thurgovie
+  Region_1123:
+    id: '1123'
+    pays_id: Pays_11
+    valeur: Zurich
+  Region_1124:
+    id: '1124'
+    pays_id: Pays_11
+    valeur: Zoug
+  Region_1125:
+    id: '1125'
+    pays_id: Pays_11
+    valeur: Argovie
+  Region_1126:
+    id: '1126'
+    pays_id: Pays_11
+    valeur: Schaffhouse
+  Region_2101:
+    id: '2101'
+    pays_id: Pays_21
+    valeur: Kondôz
+  Region_2102:
+    id: '2102'
+    pays_id: Pays_21
+    valeur: Takhar
+  Region_2103:
+    id: '2103'
+    pays_id: Pays_21
+    valeur: Djozdjan
+  Region_2104:
+    id: '2104'
+    pays_id: Pays_21
+    valeur: Badakhchan
+  Region_2105:
+    id: '2105'
+    pays_id: Pays_21
+    valeur: Balkh
+  Region_2106:
+    id: '2106'
+    pays_id: Pays_21
+    valeur: Pandjchir
+  Region_2107:
+    id: '2107'
+    pays_id: Pays_21
+    valeur: Fâryâb
+  Region_2108:
+    id: '2108'
+    pays_id: Pays_21
+    valeur: Samangan
+  Region_2109:
+    id: '2109'
+    pays_id: Pays_21
+    valeur: 'Sar-e Pol'
+  Region_2110:
+    id: '2110'
+    pays_id: Pays_21
+    valeur: Baghlan
+  Region_2111:
+    id: '2111'
+    pays_id: Pays_21
+    valeur: Nouristan
+  Region_2112:
+    id: '2112'
+    pays_id: Pays_21
+    valeur: Bâdghîs
+  Region_2113:
+    id: '2113'
+    pays_id: Pays_21
+    valeur: Parwan
+  Region_2114:
+    id: '2114'
+    pays_id: Pays_21
+    valeur: Kapisa
+  Region_2115:
+    id: '2115'
+    pays_id: Pays_21
+    valeur: Kounar
+  Region_2116:
+    id: '2116'
+    pays_id: Pays_21
+    valeur: Laghman
+  Region_2117:
+    id: '2117'
+    pays_id: Pays_21
+    valeur: Kaboul
+  Region_2118:
+    id: '2118'
+    pays_id: Pays_21
+    valeur: Bamiyan
+  Region_2119:
+    id: '2119'
+    pays_id: Pays_21
+    valeur: Wardak
+  Region_2120:
+    id: '2120'
+    pays_id: Pays_21
+    valeur: Nangarhar
+  Region_2121:
+    id: '2121'
+    pays_id: Pays_21
+    valeur: Logar
+  Region_2122:
+    id: '2122'
+    pays_id: Pays_21
+    valeur: Ghor
+  Region_2123:
+    id: '2123'
+    pays_id: Pays_21
+    valeur: Hérât
+  Region_2124:
+    id: '2124'
+    pays_id: Pays_21
+    valeur: Deykandi
+  Region_2125:
+    id: '2125'
+    pays_id: Pays_21
+    valeur: Paktiya
+  Region_2126:
+    id: '2126'
+    pays_id: Pays_21
+    valeur: Khost
+  Region_2127:
+    id: '2127'
+    pays_id: Pays_21
+    valeur: Ghazni
+  Region_2128:
+    id: '2128'
+    pays_id: Pays_21
+    valeur: Oruzgan
+  Region_2129:
+    id: '2129'
+    pays_id: Pays_21
+    valeur: Paktika
+  Region_2130:
+    id: '2130'
+    pays_id: Pays_21
+    valeur: Farâh
+  Region_2131:
+    id: '2131'
+    pays_id: Pays_21
+    valeur: Zabol
+  Region_2132:
+    id: '2132'
+    pays_id: Pays_21
+    valeur: Nimroz
+  Region_2133:
+    id: '2133'
+    pays_id: Pays_21
+    valeur: Kandahar
+  Region_2134:
+    id: '2134'
+    pays_id: Pays_21
+    valeur: Helmand
+CarnetVoyage\MapBundle\Model\Voyage:
+  Voyage_1:
+    datedebut: '2013-01-10'
+    datefin: '2013-01-12'
+    nom: eurotrip
+    commentaire: bb
+CarnetVoyage\MapBundle\Model\Destination:
+  Destination_1:
+    region_id: Region_214
+    voyage_id: Voyage_1
+    datedebut: '2013-01-10'
+    datefin: '2013-01-11'
+    commentaire: ff
+  Destination_2:
+    region_id: Region_208
+    voyage_id: Voyage_1
+    datedebut: '2013-01-11'
+    datefin: '2013-01-12'
+    commentaire: g

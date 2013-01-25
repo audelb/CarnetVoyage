@@ -7,7 +7,7 @@ namespace CarnetVoyage\MapBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 //use CarnetVoyage\MapBundle\Entity\Voyage;
-//use CarnetVoyage\MapBundle\Form\VoyageType;
+use CarnetVoyage\MapBundle\Form\Type\VoyageType;
 //use CarnetVoyage\MapBundle\Entity\Pays;
 //use CarnetVoyage\MapBundle\Entity\Region;
 //use CarnetVoyage\MapBundle\Entity\DestinationRepository;
@@ -177,22 +177,23 @@ class MapController extends Controller
         $trip = new Voyage();
 
         //créer un formulaire pour cette entité avec en option un tableau sur 2 niveau des régions (par pays)
-        $form = $this->createForm(new VoyageType, $trip, array('paysRegion' => $this->tabPaysRegion()));
+        $form = $this->createForm(new VoyageType(), $trip, array('paysRegion' => $this->tabCountryRegion()));
 
         $request = $this->get('request');
         //si la méthode est de type POST, on soummet le formulaire
-        if( $request->getMethod() == 'POST' ) 
+        if( $request->getMethod() === 'POST' ) 
         {
-            $form = $this->createForm(new VoyageType, $trip);
+            $form = $this->createForm(new VoyageType(), $trip);
             $form->bindRequest($request);
             
             //vérifier que le formulaire est valide
             if( $form->isValid() )
             {
                 //si oui, enregistrer les données
-                $em = $this->getDoctrine()->getEntityManager();
+                /*$em = $this->getDoctrine()->getEntityManager();
                 $em->persist($trip);
-                $em->flush();
+                $em->flush();*/
+                $trip->save();
 
                 //et rediriger vers la page d'accueil
                 return $this->redirect( $this->generateUrl('CarnetVoyageMapAcceuil') );
@@ -213,12 +214,15 @@ class MapController extends Controller
     public function modifyTripAction($id)
     {
         //récupérer le voyage de l'id renseigné
-        $trip = $this->getDoctrine()
+        /*$trip = $this->getDoctrine()
                 ->getRepository('CarnetVoyage\MapBundle\Entity\Voyage')
-                ->find($id);
+                ->find($id);*/
+        $trip = VoyageQuery::create()
+		        ->findPk($id);
+				print_r($trip);
 
         $originalsDestinations = array(); //déclaration d'un tableau des destinations pour ce voyage
-        $em = $this->getDoctrine()->getEntityManager();
+        //$em = $this->getDoctrine()->getEntityManager();
         
         //remplir le tableau des destinations 
         foreach ($trip->getDestinations() as $destination)
@@ -227,11 +231,11 @@ class MapController extends Controller
         }
 
         //création du formulaire de voyage
-        $form = $this->createForm(new VoyageType, $trip, array('paysRegion' => $this->tabPaysRegion()));
-
+        $form = $this->createForm(new VoyageType(), $trip, array('paysRegion' => $this->tabCountryRegion()));
+print_r('tata');
         $request = $this->get('request');
         //si la méthode est de type POST, on soummet le formulaire
-        if( $request->getMethod() == 'POST' )
+        if( $request->getMethod() === 'POST' )
         {
             $form->bindRequest($request);
             
@@ -255,12 +259,14 @@ class MapController extends Controller
                 // on supprime chaque destination "restante" 
                 foreach ($originalsDestinations as $destination) 
                 {
-                    $em->remove($destination);
+                    //$em->remove($destination);
+                    $trip->removeDestination($destination);
                 }
                 
                 // on enregistre les données 
-                $em->persist($trip);
-                $em->flush();
+                /*$em->persist($trip);
+                $em->flush();*/
+                $trip->save();
 
                 // on redirige vers la page d'accueil
                 return $this->redirect( $this->generateUrl('CarnetVoyageMapAcceuil') );
@@ -278,12 +284,13 @@ class MapController extends Controller
      *
      * @return array 
      */
-    public function tabPaysRegion()
+    public function tabCountryRegion()
     {
-        $tab = $this->getDoctrine()
+        /*$tab = $this->getDoctrine()
                 ->getEntityManager()
                 ->getRepository('CarnetVoyageMapBundle:Region')
-                ->getSelectList();
+                ->getSelectList();*/
+        $tab = RegionQuery::create()->getSelectList();
 
         return $tab;
     }

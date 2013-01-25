@@ -18,4 +18,21 @@ use CarnetVoyage\MapBundle\Model\om\BaseRegionQuery;
  */
 class RegionQuery extends BaseRegionQuery
 {
+	public function getSelectList()
+    {
+        $liste_pays = PaysQuery::create()
+		         ->find();
+        $pays_regions = array();
+        
+        foreach ($liste_pays as $pays){
+            $liste_region = $this->create()
+			        ->findByPaysId($pays->getId());
+            $regions = array();
+            foreach ($liste_region as $region){
+                $regions[$region->getId()] = $region->getValeur();
+            }
+            $pays_regions[$pays->getValeur()] = $regions;
+        }
+        return $pays_regions;
+    }
 }

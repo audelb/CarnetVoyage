@@ -1,6 +1,6 @@
 <?php
 
-namespace CarnetVoyage\MapBundle\Form;
+namespace CarnetVoyage\MapBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
@@ -39,13 +39,13 @@ class VoyageType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
       $resolver->setDefaults(array(
-        'data_class' => 'CarnetVoyage\MapBundle\Entity\Voyage'
+        'data_class' => 'CarnetVoyage\MapBundle\Model\Voyage'
       ));
     }
     
     public function getDefaultOptions(array $options){
         return array(
-            'data_class'      => 'CarnetVoyage\MapBundle\Entity\Voyage',
+            'data_class'      => 'CarnetVoyage\MapBundle\Model\Voyage',
             'paysRegion'   => array()
         );
     }
