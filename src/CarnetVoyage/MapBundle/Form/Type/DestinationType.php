@@ -10,11 +10,11 @@ class DestinationType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {   
         $builder
-            ->add('region','choice',array(
-                //'class'=>'CarnetVoyage\MapBundle\Model\Region',
-                'choices'=>$options['choices'],
+            ->add('region','model',array(
+                'class'=>'CarnetVoyage\MapBundle\Model\Region',
+                //'choices'=>$options['choices'],
                 'attr'=>array('class'=>'select_region'),
-                //'property'=>'valeur',
+                'property'=>'valeur',
                 'label'=>'Quelle région du monde avez-vous visité ?'))
             ->add('dateDebut', 'date', array ('attr'=> array('class'=>'date'), 
                 'widget' => 'single_text', 

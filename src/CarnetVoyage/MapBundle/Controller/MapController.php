@@ -128,8 +128,7 @@ class MapController extends Controller
                 ->getRepository('CarnetVoyageMapBundle:Region')
                 ->findBy(array ('pays' => $country->getId()));*/
         $listRegion = RegionQuery::create()
-		        ->filterByPays($country)
-				->findOne();        
+		        ->findByPays($country);        
 
         $listColorRegion = array(); //déclaration d'un tableau des couleurs de chaque région
         $listLabelRegion = array(); //déclaration d'un tableau des labels de chaque région
@@ -162,7 +161,7 @@ class MapController extends Controller
         
         $colorJson = json_encode($listColorRegion); //encodage json du tableau des couleurs
         $labelJson = json_encode($listLabelRegion); //encodage json du tableau des labels
-        $valueCountry = $country->getValeur_fichier(); //récupérer le nom du fichier js du pays
+        $valueCountry = $country->getValeurFichier(); //récupérer le nom du fichier js du pays
         
         return $this->render('CarnetVoyageMapBundle:Map:seeCountry.html.twig', array('value' => $valueCountry, 'colorRegion' => $colorJson, 'labelRegion' => $labelJson));
     }
@@ -219,7 +218,6 @@ class MapController extends Controller
                 ->find($id);*/
         $trip = VoyageQuery::create()
 		        ->findPk($id);
-				print_r($trip);
 
         $originalsDestinations = array(); //déclaration d'un tableau des destinations pour ce voyage
         //$em = $this->getDoctrine()->getEntityManager();
@@ -232,7 +230,7 @@ class MapController extends Controller
 
         //création du formulaire de voyage
         $form = $this->createForm(new VoyageType(), $trip, array('paysRegion' => $this->tabCountryRegion()));
-print_r('tata');
+
         $request = $this->get('request');
         //si la méthode est de type POST, on soummet le formulaire
         if( $request->getMethod() === 'POST' )
