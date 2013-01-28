@@ -176,7 +176,7 @@ class MapController extends Controller
         $trip = new Voyage();
 
         //créer un formulaire pour cette entité avec en option un tableau sur 2 niveau des régions (par pays)
-        $form = $this->createForm(new VoyageType(), $trip, array('paysRegion' => $this->tabCountryRegion()));
+        $form = $this->createForm(new VoyageType(), $trip/*, array('paysRegion' => $this->tabCountryRegion())*/);
 
         $request = $this->get('request');
         //si la méthode est de type POST, on soummet le formulaire
@@ -229,7 +229,7 @@ class MapController extends Controller
         }
 
         //création du formulaire de voyage
-        $form = $this->createForm(new VoyageType(), $trip, array('paysRegion' => $this->tabCountryRegion()));
+        $form = $this->createForm(new VoyageType(), $trip/*, array('paysRegion' => $this->tabCountryRegion())*/);
 
         $request = $this->get('request');
         //si la méthode est de type POST, on soummet le formulaire

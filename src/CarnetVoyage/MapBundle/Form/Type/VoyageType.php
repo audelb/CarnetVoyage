@@ -3,11 +3,16 @@
 namespace CarnetVoyage\MapBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormTypeInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\Options;
+
+
 
 class VoyageType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('nom', 'text', array ('required' => false, 
@@ -27,8 +32,8 @@ class VoyageType extends AbstractType
             ->add('commentaire', 'textarea', array ('required' => false,
                 'label'=>'quelques commentaires ...'))
             ->add('destinations', 'collection', array('type' => new DestinationType(),
-                'options'  => array(
-                    'choices'  => $options['paysRegion']),
+                /*'options'  => array(
+                    'choices'  => $options['paysRegion']),*/
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'by_reference' => false,
@@ -43,12 +48,12 @@ class VoyageType extends AbstractType
       ));
     }
     
-    public function getDefaultOptions(array $options){
+    /*public function getDefaultOptions(array $options){
         return array(
             'data_class'      => 'CarnetVoyage\MapBundle\Model\Voyage',
             'paysRegion'   => array()
         );
-    }
+    }*/
 
     public function getName()
     {

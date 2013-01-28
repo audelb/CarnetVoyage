@@ -133,7 +133,7 @@
 
         // Remplace '$$name$$' dans le HTML du prototype par un nombre basé sur
         // le nombre de formulaire destination déjà affiché
-        var newForm = prototype.replace(/\$\$name\$\$/g, collectionHolder.children('.dest').length);
+        var newForm = prototype.replace(/__name__/g, collectionHolder.children('.dest').length);
 
         // Affiche le formulaire dans la page dans un div, avant le lien "ajouter une destination"
         var $newFormLi = $('<div class = "dest"></div>').append(newForm);
