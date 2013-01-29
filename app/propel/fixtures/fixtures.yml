@@ -1015,3 +1015,28 @@ CarnetVoyage\MapBundle\Model\Destination:
     datedebut: '2013-01-11'
     datefin: '2013-01-12'
     commentaire: g
+CarnetVoyage\MapBundle\Model\Contenu:
+  Contenu_1:
+    destination_id: Destination_1
+    nom: bla
+    chemin: bundles/carnetvoyagemap/images/Basse-Normandie/img1.jpg
+    date: '2013-01-11'
+    commentaire: 'Trop cool'
+  Contenu_2:
+    destination_id: Destination_1
+    nom: bli
+    chemin: bundles/carnetvoyagemap/images/Basse-Normandie/img2.jpg
+    date: '2013-01-11'
+    commentaire: 'Trop cool'
+  Contenu_3:
+    destination_id: Destination_1
+    nom: blo
+    chemin: bundles/carnetvoyagemap/images/Basse-Normandie/img3.jpg
+    date: '2013-01-11'
+    commentaire: 'Trop cool'
+  Contenu_4:
+    destination_id: Destination_1
+    nom: blu
+    chemin: bundles/carnetvoyagemap/images/Basse-Normandie/img4.jpg
+    date: '2013-01-11'
+    commentaire: 'Trop cool'

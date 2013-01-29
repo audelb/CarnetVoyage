@@ -20,6 +20,8 @@ use CarnetVoyage\MapBundle\Model\Region;
 use CarnetVoyage\MapBundle\Model\RegionQuery;
 use CarnetVoyage\MapBundle\Model\Voyage;
 use CarnetVoyage\MapBundle\Model\VoyageQuery;
+use CarnetVoyage\MapBundle\Model\Contenu;
+use CarnetVoyage\MapBundle\Model\ContenuQuery;
 
 class MapController extends Controller
 {
@@ -164,6 +166,28 @@ class MapController extends Controller
         $valueCountry = $country->getValeurFichier(); //récupérer le nom du fichier js du pays
         
         return $this->render('CarnetVoyageMapBundle:Map:seeCountry.html.twig', array('value' => $valueCountry, 'colorRegion' => $colorJson, 'labelRegion' => $labelJson));
+    }
+
+     /**
+     * Photos list
+     *
+     */
+    public function listPhotosAction($id)
+    {
+    	/*$region = RegionQuery::create()
+		        ->findPk(214);*/
+        //$id = 214;
+    	//list Destination by region
+    	$destinations = DestinationQuery::create()
+		        ->findByRegionId($id); 
+		foreach ($destinations as $destination) 
+		{
+			$photos = ContenuQuery::create()
+			        ->findByDestination($destination);     
+		}
+     
+
+        return $this->render('CarnetVoyageMapBundle:Map:listPhotos.html.twig', array('photos' => $photos));
     }
     
     /**

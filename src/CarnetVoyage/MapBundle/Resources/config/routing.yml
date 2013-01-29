@@ -15,6 +15,10 @@ CarnetVoyageMapAjouterVoyage:
 CarnetVoyageMapListerVoyage:
     pattern:   /listTrip
     defaults:  { _controller: CarnetVoyageMapBundle:Map:listTrip }
+    
+CarnetVoyageMapListerPhotos:
+    pattern:   /listPhotos/{id}
+    defaults:  { _controller: CarnetVoyageMapBundle:Map:listPhotos }
         
 CarnetVoyageMapModifierVoyage:
     pattern:   /modifyTrip/{id}
