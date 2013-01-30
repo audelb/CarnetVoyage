@@ -5,19 +5,18 @@
 {% block title %}{{ parent() }} - Index{% endblock %}
      
 {% block body %}       
-    {% block javascripts %}{{ parent() }}{% endblock %}  
     <h1>Bienvenue sur votre carnet de voyage</h1>
     <div id='worldmap' style='width: 1250px; height: 800px;'></div>
     <script type="text/javascript">
         $(document).ready(function() 
         {
-            var labelPerso = {{ labelPays|raw }};
+            var labelPerso = {{ labelCountry|raw }};
             $('#worldmap').vectorMap({
                 map: 'world',
                 hoverOpacity: 0.5,
                 hoverColor: false,
                 backgroundColor: "#0080FF",
-                colors: {{ couleurPays|raw }},
+                colors: {{ colorCountry|raw }},
                 
                 onRegionClick: function(element, pays) //Click sur un pays
                 {
