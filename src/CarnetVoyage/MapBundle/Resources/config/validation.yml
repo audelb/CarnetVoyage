@@ -1,0 +1,7 @@
+CarnetVoyage\MapBundle\Entity\Voyage:
+    properties:
+        nom:
+            - NotBlank: { message: "Vous devez entrer un nom de voyage" }
+    getters:
+        DatesValid:
+            - "True": { message: "La date de fin de voyage doit être supérieure à la date de début" }

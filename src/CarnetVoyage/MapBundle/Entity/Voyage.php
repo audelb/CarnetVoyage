@@ -151,22 +151,44 @@ class Voyage
       $this->destinations = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    /**
+     * Add Destination
+     *
+     * @param Destination $destination
+	 * 
+	 * @return array 
+     */
     public function addDestination(\CarnetVoyage\MapBundle\Entity\Destination $destination)
     {
       $this->destinations[] = $destination;
       return $this;
     }
-
+	
+    /**
+     * Remove Destination
+     *
+     * @param Destination $destination 
+     */
     public function removeDestination(\CarnetVoyage\MapBundle\Entity\Destination $destination)
     {
       $this->destinations->removeElement($destination);
     }
 
+    /**
+     * Get destinations
+     *
+     * @return array 
+     */
     public function getDestinations()
     {
       return $this->destinations;
     }
     
+    /**
+     * Set destinations
+     *
+     * @param array 
+     */
     public function setDestinations($destinations){
         foreach ($destinations as $destination) {
             $destination->setVoyage($this);
@@ -174,8 +196,23 @@ class Voyage
         $this->destinations = $destinations;
     }
     
+	/**
+     * Get nbDestinations
+     *
+     * @return integer 
+     */
     public function getNbDestinations()
     {
         return $this->destinations->count();
     }
+	
+	/**
+     * Is datesValid
+     *
+     * @return boolean 
+     */
+	public function isDatesValid()
+	{
+    	return ($this->dateFin >= $this->dateDebut);
+	}
 }

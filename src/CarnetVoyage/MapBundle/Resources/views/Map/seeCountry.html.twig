@@ -2,19 +2,18 @@
 
 {% extends "CarnetVoyageMapBundle::layout.html.twig" %}
 
-{% block title %}{{ parent() }} - {{ valeur }}{% endblock %}
+{% block title %}{{ parent() }} - {{ value }}{% endblock %}
 
-{% block body %}       
-    {% block javascripts %}{{ parent() }}{% endblock %}  
-    <h1>Souvenir de voyage : {{ valeur }}</h1>
+{% block body %}        
+    <h1>Souvenir de voyage : {{ value }}</h1>
         <!-- This is the container for the carousel. -->
         <div id = "carousel1" style="width:800px; height:350px;background:transparent;overflow:scroll;">            
             <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
             <!-- You can place links around these images -->
-            <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img1.jpg') }}" width="177" height="178" alt="Flag 1 Description" title="Flag 1 Title" />
-            <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img2.jpg') }}" width="177" height="178" alt="Flag 2 Description" title="Flag 2 Title" />
-            <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img3.jpg') }}" width="177" height="178" alt="Flag 3 Description" title="Flag 3 Title" />
-            <img class = "cloudcarousel" src="{{ asset ('bundles/CarnetVoyageMap/images/Basse-Normandie/img4.jpg') }}" width="177" height="178" alt="Flag 4 Description" title="Flag 4 Title" />
+            <img class = "cloudcarousel" src="{{ asset ('bundles/carnetvoyagemap/images/Basse-Normandie/img1.jpg') }}" width="177" height="178" alt="Flag 1 Description" title="Flag 1 Title" />
+            <img class = "cloudcarousel" src="{{ asset ('bundles/carnetvoyagemap/images/Basse-Normandie/img2.jpg') }}" width="177" height="178" alt="Flag 2 Description" title="Flag 2 Title" />
+            <img class = "cloudcarousel" src="{{ asset ('bundles/carnetvoyagemap/images/Basse-Normandie/img3.jpg') }}" width="177" height="178" alt="Flag 3 Description" title="Flag 3 Title" />
+            <img class = "cloudcarousel" src="{{ asset ('bundles/carnetvoyagemap/images/Basse-Normandie/img4.jpg') }}" width="177" height="178" alt="Flag 4 Description" title="Flag 4 Title" />
 
             <!-- Define left and right buttons. -->
             <div id="left-but" class="carouselBut"></div>
@@ -36,19 +35,20 @@
             
             $('#worldmap').vectorMap(
             {
-                map: '{{ valeur }}',
+                map: '{{ value }}',
                 hoverOpacity: 0.5,
                 hoverColor: false,
-                colors: {{ couleurRegion|raw }}, 
+                colors: {{ colorRegion|raw }}, 
                 backgroundColor: "#ffffff",
                 borderColor: "#000000",
                 selectedColor: "#EC0000",
                 
                 onRegionClick: function(element, pays)
                 {
-                    $('#carousel1').bPopup();
-                    //var toto = ;
-                    //$('#toto').append("{% render "CarnetVoyageMapBundle:Map:listTrip" %}");
+                    //$('#carousel1').bPopup();
+                    //var titi = ;
+                    //alert(titi);
+                    $('#toto').append(titi);
                 },
                 
                 onLabelShow: function(e, label, code)
