@@ -1,0 +1,5 @@
+{# src/CarnetVoyage/MapBundle/Resources/views/Map/listPhotos.html.twig #}
+
+{% for photo in photos %}
+   	<img class = "cloudcarousel" src="{{ asset (photo.webPath) }}" width="177" height="178" alt="{{photo.commentaire}}" title={{photo.nom}} />
+{% endfor %}

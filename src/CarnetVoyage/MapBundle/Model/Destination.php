@@ -18,4 +18,8 @@ use CarnetVoyage\MapBundle\Model\om\BaseDestination;
  */
 class Destination extends BaseDestination
 {
+	public function __toString()
+    {
+        return (string) $this->getVoyage()->getNom() . '/' . $this->getRegion()->getValeur();
+    }
 }

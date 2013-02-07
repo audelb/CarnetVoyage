@@ -43,8 +43,6 @@
                     {{ form_errors(form.commentaire) }}
                   </td>
               </tr>
-        </table>
-        <table>
               <tr>
                   <th>Vos destinations</th>
               </tr>
@@ -92,7 +90,8 @@
             {% endfor %}
         </div>
       {{ form_rest(form) }}
-    <input type="submit" class="btn btn-primary" />
+      <br/>
+    <input type="submit" class="btn btn-primary" value="Enregistrer" />
   </form>
 </div>
 <script type="text/javascript">
@@ -165,7 +164,7 @@
             dateFormat: 'yy-mm-dd', 
             changeYear: true, 
             changeMonth: true, 
-            monthNamesShort: ['Jan','F&eacute;v','Mar','Avr','Mai','Juin','Juil','Ao&ucirc;t','Sep','Oct','Nov','D&eacute;c'],
+            monthNamesShort: ['Janvier','F&eacute;vrier','Mars','Avril','Mai','Juin','Juillet','Ao&ucirc;t','Septembre','Octobre','Novembre','D&eacute;cembre'],
             yearRange: '1900:2020' // panel des années affichées dans le calendrier
         });
             

@@ -6039,20 +6039,20 @@ a.badge:hover {
 }
 
 #left-but {
-    background: url("../images/icons/left_arrow.gif") no-repeat scroll 0 0 transparent;
-    right: 64px;
+  background: url("../images/icons/left_arrow.gif") no-repeat scroll 0 0 transparent;
+  right: 64px;
 }
 
 #right-but {
-    background: url("../images/icons/right_arrow.gif") no-repeat scroll 0 0 transparent;
-    right: 20px;
+  background: url("../images/icons/right_arrow.gif") no-repeat scroll 0 0 transparent;
+  right: 20px;
 }
 
 .carouselBut {
-    display: inline;
-    position: absolute;
+  display: inline;
+  position: absolute;
     
-    top: 0px;
-    height: 40px;
-    width: 40px;
+  top: 0px;
+  height: 40px;
+  width: 40px;
 }

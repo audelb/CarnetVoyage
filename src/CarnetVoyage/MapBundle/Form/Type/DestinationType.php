@@ -31,7 +31,8 @@ class DestinationType extends AbstractType
                 'input'=>'datetime', 
                 'format'=>'yyyy-MM-dd',
                 'label'=>'Date de fin'))
-            ->add('commentaire', 'textarea', array('label'=>'quelques commentaires ...'))
+            ->add('commentaire', 'textarea', array('required' => false,
+                 'label'=>'quelques commentaires ...'))
             ;
         
     }

@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 //use CarnetVoyage\MapBundle\Entity\Voyage;
 use CarnetVoyage\MapBundle\Form\Type\VoyageType;
+use CarnetVoyage\MapBundle\Form\Type\ContenuType;
 //use CarnetVoyage\MapBundle\Entity\Pays;
 //use CarnetVoyage\MapBundle\Entity\Region;
 //use CarnetVoyage\MapBundle\Entity\DestinationRepository;
@@ -185,8 +186,7 @@ class MapController extends Controller
 			$photos = ContenuQuery::create()
 			        ->findByDestination($destination);     
 		}
-     
-
+		
         return $this->render('CarnetVoyageMapBundle:Map:listPhotos.html.twig', array('photos' => $photos));
     }
     
@@ -320,5 +320,49 @@ class MapController extends Controller
 	public function deleteTripAction($id)
     {
         return $this->render('CarnetVoyageMapBundle:Map:deleteTrip.html.twig');
+    }
+	
+	/**
+     * add photo
+     *
+     */
+    public function addPhotoAction()
+    {
+        //nouvelle entité contenu
+        $photo = new Contenu();
+
+        $form = $this->createForm(new ContenuType(), $photo);
+
+        $request = $this->get('request');
+        //si la méthode est de type POST, on soummet le formulaire
+        if( $request->getMethod() === 'POST' ) 
+        {
+            $form = $this->createForm(new ContenuType(), $photo);
+            $form->bindRequest($request);
+            
+            //vérifier que le formulaire est valide
+            if( $form->isValid() )
+            {
+            	$photo->upload();
+				
+                //si oui, enregistrer les données
+                /*$em = $this->getDoctrine()->getEntityManager();
+                $em->persist($trip);
+                $em->flush();*/
+                $photo->save();
+
+				$this->get('session')
+				->getFlashBag()
+				->add('notice', 'Votre photo a bien été enregistrée !');
+				
+                //et rediriger vers la page d'accueil
+                return $this->redirect( $this->generateUrl('CarnetVoyageMapAjouterPhoto') );
+            }
+        }
+
+        //si non 
+            //le formulaire n'est pas valide, on renvoie la page, avec données et message d'erreur
+            //la méthode n'est pas de type POST, on est dans la partie création du formulaire et non enregitrement des données
+        return $this->render('CarnetVoyageMapBundle:Map:addPhoto.html.twig', array('form' => $form->createView()));
     }
 }

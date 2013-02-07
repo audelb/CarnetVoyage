@@ -15,16 +15,13 @@ class VoyageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom', 'text', array ('required' => false, 
-                'label'=>'Donnez un nom à votre voyage'))
-            ->add('dateDebut', 'date', array ('required' => false, 
-                'attr'=> array('class'=>'date'), 
+            ->add('nom', 'text', array ('label'=>'Donnez un nom à votre voyage'))
+            ->add('dateDebut', 'date', array ('attr'=> array('class'=>'date'), 
                 'widget' => 'single_text', 
                 'input'=>'datetime', 
                 'format'=>'yyyy-MM-dd',
                 'label'=>'Date de début'))
-            ->add('dateFin', 'date', array ('required' => false, 
-                'attr'=> array('class'=>'date'), 
+            ->add('dateFin', 'date', array ('attr'=> array('class'=>'date'), 
                 'widget' => 'single_text', 
                 'input'=>'datetime', 
                 'format'=>'yyyy-MM-dd',
@@ -37,7 +34,8 @@ class VoyageType extends AbstractType
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'by_reference' => false,
-                'required' => false))    
+                'required' => false,
+				'label'=>' '))    
         ;
     }
     
