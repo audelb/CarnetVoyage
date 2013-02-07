@@ -1,0 +1,36 @@
+{# src/CarnetVoyage/MapBundle/Resources/views/Map/new_trip.html.twig #}
+
+{% extends "CarnetVoyageMapBundle::layout.html.twig" %}
+
+{% block body %}
+
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+ 
+		<p class='notice'>{{ flashMessage }}</p>
+ 
+	{% endfor %}
+
+	<h2>Enregistrez vos souvenirs</h2>
+
+	<form action="#" method="post" {{ form_enctype(form) }}>
+	    {{ form_widget(form) }}
+	
+	    <input type="submit" class="btn btn-primary" value="Enregistrer" />
+	</form>
+	
+	<script type="text/javascript">
+		$(document).ready(function($) 
+    	{
+			jQuery.datepicker.setDefaults($.datepicker.regional['fr']);
+	        $('.date').datepicker(
+	        {
+	            dateFormat: 'yy-mm-dd', 
+	            changeYear: true, 
+	            changeMonth: true, 
+	            monthNamesShort: ['Janvier','F&eacute;vrier','Mars','Avril','Mai','Juin','Juillet','Ao&ucirc;t','Septembre','Octobre','Novembre','D&eacute;cembre'],
+	            yearRange: '1900:2020' // panel des années affichées dans le calendrier
+	        });
+        });
+	</script>
+	
+{% endblock %}

@@ -6,7 +6,7 @@
      
 {% block body %}       
     <h1>Bienvenue sur votre carnet de voyage</h1>
-    <div id='worldmap' style='width: 1250px; height: 800px;'></div>
+    <div id='worldmap'></div>
     <script type="text/javascript">
         $(document).ready(function() 
         {
@@ -15,7 +15,7 @@
                 map: 'world',
                 hoverOpacity: 0.5,
                 hoverColor: false,
-                backgroundColor: "#0080FF",
+                backgroundColor: "transparent",
                 colors: {{ colorCountry|raw }},
                 
                 onRegionClick: function(element, pays) //Click sur un pays

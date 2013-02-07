@@ -3,7 +3,6 @@
 {% extends "CarnetVoyageMapBundle::layout.html.twig" %}
 
 {% block body %}
-    {% block javascripts %}{{ parent() }}{% endblock %}
     <h2>Modifier le voyage {{ id }}</h2>
 
   {% include "CarnetVoyageMapBundle:Map:formulaireTrip.html.twig" %}

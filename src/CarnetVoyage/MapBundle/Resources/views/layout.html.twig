@@ -14,13 +14,12 @@
         <!-- déclaration des fichiers js -->
         {% block javascripts %}
             <script src="{{ asset('bundles/carnetvoyagemap/js/bootstrap.js') }}" type="text/javascript" ></script>
-            <script src="{{ asset ('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js') }}" type="text/javascript"></script>
-            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+            <script src="{{ asset('bundles/carnetvoyagemap/js/jquery-1.9.1.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('http://code.jquery.com/jquery-migrate-1.0.0.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/carnetvoyagemap/js/jquery-ui-1.10.0.custom.js') }}" type="text/javascript"></script>
             <script src="{{ asset ('bundles/carnetvoyagemap/js/jquery.vmap.js') }}" type="text/javascript"></script>
             <script src="{{ asset ('bundles/carnetvoyagemap/js/select2.js') }}" type="text/javascript"></script>
-            <script src="{{ asset ('bundles/carnetvoyagemap/js/select2.min.js') }}" type="text/javascript"></script>
             <script src="{{ asset ('bundles/carnetvoyagemap/js/cloud-carousel.1.0.5.js') }}" type="text/javascript"></script>
-            <script src="{{ asset ('bundles/carnetvoyagemap/js/cloud-carousel.1.0.5.min.js') }}" type="text/javascript"></script>
             <script src="{{ asset ('bundles/carnetvoyagemap/js/jquery.bpopup-0.8.0.min.js') }}" type="text/javascript"></script>
             <script src="{{ asset ('bundles/carnetvoyagemap/js/pays/world.js') }}" type="text/javascript"></script>
             <script src="{{ asset ('bundles/carnetvoyagemap/js/pays/france.js') }}" type="text/javascript"></script>
@@ -106,23 +105,22 @@
     <body>
         <div class="container">
             <div id="header" class="hero-unit">
-                <h1>Mon carnet de voyage</h1>
+                <h1></h1>
             </div>
 
             <!-- Menu -->
             <div class="row">
-                <div id="menu" class="span3">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li class="menu"><a href="{{ path('CarnetVoyageMapAcceuil') }}">Accueil</a></li>
-                            <li class="menu"><a href="{{ path('CarnetVoyageMapAjouterVoyage') }}">Ajouter un voyage</a></li>
-                            <li class="menu">
-                                Modifier un voyage
-                                <ul>
+                        <ul id="menu" class="nav nav-pills nav-stacked">
+                            <li><a href="{{ path('CarnetVoyageMapAcceuil') }}">Accueil</a></li>
+                            <li><a href="{{ path('CarnetVoyageMapAjouterVoyage') }}">Ajouter un voyage</a></li>
+                            <li>
+                                <a href="#">Modifier un voyage</a>
+                                <ul class="sousMenu">
                                     {% render "CarnetVoyageMapBundle:Map:listTrip" %}
                                 </ul>
                             </li>
+                            <li><a href="{{ path('CarnetVoyageMapAjouterPhoto') }}">Ajouter des photos</a></li>
                         </ul>
-                </div>
                 <div id="content" class="span9">
                     {% block body %}
                     {% endblock %}
@@ -134,6 +132,11 @@
             <footer>
                 <p>Aude LE BRAS</p>
             </footer>
-        </div> 
+        </div>
+         <script>
+			$(function() {
+				$( "#menu" ).menu();
+			});
+		</script> 
     </body>
 </html>

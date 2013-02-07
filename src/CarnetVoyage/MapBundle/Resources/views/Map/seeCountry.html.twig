@@ -6,20 +6,19 @@
 
 {% block body %}        
     <h1>Souvenirs de voyage : {{ value }}</h1>
-        <!-- This is the container for the carousel. -->
-        <div id = "carousel1" style="width:800px; height:350px;background:transparent;overflow:scroll;">            
-            <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
-            <!-- You can place links around these images -->
-            
-            <!-- Define left and right buttons. -->
-            <div id="left-but" class="carouselBut"></div>
-            <div id="right-but" class="carouselBut"></div>
-            <!-- Define elements to accept the alt and title text from the images. -->
-            <div id="carousel-title" style="display: block; color: white"></div>
-            <div id="carousel-alt" style="display: block; color: white"></div>
-        </div>
-    <div id='worldmap' style='width: 1250px; height: 800px;'>
+    <!-- This is the container for the carousel. -->
+    <div id = "carousel1">            
+        <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
+        <!-- You can place links around these images -->
+        
+        <!-- Define left and right buttons. -->
+        <div id="left-but" class="carouselBut"></div>
+        <div id="right-but" class="carouselBut"></div>
+        <!-- Define elements to accept the alt and title text from the images. -->
+        <div id="carousel-title"></div>
+        <div id="carousel-alt"></div>
     </div>
+    <div id='worldmap'></div>
     <script type="text/javascript">
         $(document).ready(function() 
         {
@@ -34,7 +33,7 @@
                 hoverOpacity: 0.5,
                 hoverColor: false,
                 colors: {{ colorRegion|raw }}, 
-                backgroundColor: "#ffffff",
+                backgroundColor: "tranparent",
                 borderColor: "#000000",
                 selectedColor: "#EC0000",
                 
