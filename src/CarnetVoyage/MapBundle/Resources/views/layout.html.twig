@@ -106,21 +106,23 @@
         <div class="container">
             <div id="header" class="hero-unit">
                 <h1></h1>
+                <section id="Smenu">
+                    <ul id="menu" class="nav nav-pills nav-stacked">
+                        <li><a href="{{ path('CarnetVoyageMapAcceuil') }}">Accueil</a></li>
+                        <li><a href="{{ path('CarnetVoyageMapAjouterVoyage') }}">Ajouter un voyage</a></li>
+                        <li>
+                            <a href="#">Modifier un voyage</a>
+                            <ul>
+                                {% render "CarnetVoyageMapBundle:Map:listTrip" %}
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('CarnetVoyageMapAjouterPhoto') }}">Ajouter des photos</a></li>
+                    </ul>
+                </section>
             </div>
 
             <!-- Menu -->
             <div class="row">
-                        <ul id="menu" class="nav nav-pills nav-stacked">
-                            <li><a href="{{ path('CarnetVoyageMapAcceuil') }}">Accueil</a></li>
-                            <li><a href="{{ path('CarnetVoyageMapAjouterVoyage') }}">Ajouter un voyage</a></li>
-                            <li>
-                                <a href="#">Modifier un voyage</a>
-                                <ul class="sousMenu">
-                                    {% render "CarnetVoyageMapBundle:Map:listTrip" %}
-                                </ul>
-                            </li>
-                            <li><a href="{{ path('CarnetVoyageMapAjouterPhoto') }}">Ajouter des photos</a></li>
-                        </ul>
                 <div id="content" class="span9">
                     {% block body %}
                     {% endblock %}

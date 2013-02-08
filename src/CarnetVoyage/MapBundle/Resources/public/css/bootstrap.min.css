@@ -6069,13 +6069,21 @@ a.badge:hover {
   padding-top: 16px;
 }
 
-ul.sousMenu {
+/*ul.sousMenu {
   display: block;
   left: 477px;
   right: 1162px;
   top: 505.15px;
   width: 80px;
   height: auto;
-/*  background-color: transparent;*/
+  background-color: transparent;
   border: medium none transparent;
+}*/
+
+section#Smenu {
+	float: left;
+	margin-top: -340px; 
+	margin-left: -185px;
+	font-size: 0.9em;
+	border-color: blue;
 }
