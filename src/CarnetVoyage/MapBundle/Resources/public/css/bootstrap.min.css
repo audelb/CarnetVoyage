@@ -6087,3 +6087,7 @@ section#Smenu {
 	font-size: 0.9em;
 	border-color: blue;
 }
+
+table.manage img.photo {
+	height: 60px;
+}

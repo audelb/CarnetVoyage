@@ -48,32 +48,39 @@ class Contenu extends BaseContenu
         return 'upload/photos';
     }
 	
-	public function upload()
+	public function preInsert(\PropelPDO $con = null)
+	{	
+		if (null !== $this->file) {
+            $this->setChemin($this->file->guessExtension());
+        }
+		return TRUE;
+	}
+	
+	public function postInsert(\PropelPDO $con = null)
 	{
 	    // la propriété « file » peut être vide si le champ n'est pas requis
 	    if (null === $this->file) {
 	        return;
 	    }
 	
-	    $extension = $this->file->guessExtension();
-		if (!$extension) {
-		    // l'extension n'a pas été trouvée
-		    $extension = 'bin';
-		}
+		$name = $this->getId().'.'.$this->getChemin();
 		
-		$name = rand(1, 99999).'.'.$extension;
-	
 	    // la méthode « move » prend comme arguments le répertoire cible et
 	    // le nom de fichier cible où le fichier doit être déplacé
 	    $this->file->move($this->getUploadRootDir(), $name);
-	
-	    // définit la propriété « path » comme étant le nom de fichier où vous
-	    // avez stocké le fichier
-	    
-	    $this->setChemin($name);
+		
+		$this->setChemin($name);
+		$this->save();
 	
 	    // « nettoie » la propriété « file » comme vous n'en aurez plus besoin
 	    $this->file = null;
 	}
 	
+
+    public function postDelete(\PropelPDO $con = null)
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
 }

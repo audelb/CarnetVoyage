@@ -1,0 +1,16 @@
+{# src/CarnetVoyage/MapBundle/Resources/views/Map/modifyphoto.html.twig #}
+
+{% extends "CarnetVoyageMapBundle::layout.html.twig" %}
+
+{% block body %}
+    <h2>Modifier la photo {{ id }}</h2>
+
+  {% include "CarnetVoyageMapBundle:Map:formPhoto.html.twig" %}
+
+<script type="text/javascript">
+    $(document).ready(function($) 
+    {
+    	$('div:has(#carnetvoyage_mapbundle_contenutype_file)').hide();
+    });
+</script>
+{% endblock %}

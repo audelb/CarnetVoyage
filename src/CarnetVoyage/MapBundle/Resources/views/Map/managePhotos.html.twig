@@ -1,0 +1,39 @@
+{# src/CarnetVoyage/MapBundle/Resources/views/Map/managePhotos.html.twig #}
+
+{% extends "CarnetVoyageMapBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Index{% endblock %}
+
+{% block body %}
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+ 
+		<p class='notice'>{{ flashMessage }}</p>
+ 
+	{% endfor %}
+	
+	<div class="well">
+		<h2>Vos photos</h2>
+		<table class="manage">
+			{% for photo in photos %}
+				<tr>
+					<td>
+						<img class = "photo" src="{{ asset (photo.webPath) }}" alt="{{photo.commentaire}}" title={{photo.nom}} />
+					</td>
+					<td>
+						{{photo.nom}}
+					</td>
+					<td>
+						<a href="{{ path('CarnetVoyageMapModifierPhoto', {'id': photo.id}) }}"><img src="{{ asset ('bundles/carnetvoyagemap/images/icons/edit.png') }}" alt="Modifier" title="Modifier" /></a>
+					<td>
+						<a href="{{ path('CarnetVoyageMapSupprimerPhoto', {'id': photo.id}) }}"><img src="{{ asset ('bundles/carnetvoyagemap/images/icons/trash.png') }}" alt="Supprimer" title="Supprimer" /></a>
+					</td>
+				</tr>
+			{% endfor %}
+			<tr>
+				<td>
+					<a href="{{ path('CarnetVoyageMapAjouterPhoto') }}"><img src="{{ asset ('bundles/carnetvoyagemap/images/icons/add.png') }}" alt="Ajouter" title="Ajouter" />Ajouter une photo</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+{% endblock %}

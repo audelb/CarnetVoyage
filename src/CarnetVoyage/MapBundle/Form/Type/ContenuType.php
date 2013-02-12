@@ -14,7 +14,8 @@ class ContenuType extends AbstractType
     {   
         $builder
             ->add('nom','text',array ('label'=>'Donnez un nom à cette photo'))
-            ->add('file','file',array ('label'=>'Votre photo'))
+            ->add('file','file',array ('label'=>'Votre photo',
+            'required' => false))
 			->add('destination', 'model', array(
                 'class' => 'CarnetVoyage\MapBundle\Model\Destination'
 				))
